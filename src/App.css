@@ -1,0 +1,17 @@
+.App{
+  background-image: url("assets/security_android.png");
+  height: 110vh;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.bigTitle{
+  font-size: xx-large;
+  text-align: center;
+  font-weight: bold;
+}
+
+.pagedTable{
+  padding: 2in 0.5in 1in 0.5in;
+}
