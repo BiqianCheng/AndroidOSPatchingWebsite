@@ -1,7 +1,7 @@
 import "./App.css";
-import ButtonTable from "../src/components/Table.js";
+import ButtonTable from "./components/ButtonTable.js";
 import PhoneTable from "../src/components/PhoneTable.js";
-import PhoneTimeline from '../src/components/PhoneTimeline.js'
+import PhoneTimeline from "../src/components/PhoneTimeline.js";
 import Grid from "@material-ui/core/Grid";
 import { Container, Typography } from "@material-ui/core";
 
