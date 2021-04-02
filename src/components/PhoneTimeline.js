@@ -1,8 +1,8 @@
-import React from "react";
-import $ from "jquery";
-import "jq-timeline/dist/jquery.timeline.min.js";
-import "jq-timeline/dist/jquery.timeline.min.css";
-import { Button } from "@material-ui/core";
+import React from 'react';
+import $ from 'jquery';
+import 'jq-timeline/dist/jquery.timeline.min.js';
+import 'jq-timeline/dist/jquery.timeline.min.css';
+import { Button } from '@material-ui/core';
 
 class PhoneTimeline extends React.Component {
     constructor({ data, phoneList }) {
@@ -10,81 +10,67 @@ class PhoneTimeline extends React.Component {
         this.state = {
             data: [
                 {
-                    eventId: 50,
+                    eventId: 1,
                     row: 1,
-                    start: "2017-5-20 8:00",
-                    type: "point",
+                    start: '2017-5-1',
+                    type: 'point',
                     content:
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis luctus tortor nec bibendum malesuada. Etiam sed libero cursus, placerat est at, fermentum quam. In sed fringilla mauris. Fusce auctor turpis ac imperdiet porttitor. Duis vel pharetra magna, ut mollis libero. Etiam cursus in leo et viverra. Praesent egestas dui a magna eleifend, id elementum felis maximus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum sed elit gravida, euismod nunc id, ullamcorper tellus. Morbi elementum urna faucibus tempor lacinia. Quisque pharetra purus at risus tempor hendrerit. Nam dui justo, molestie quis tincidunt sit amet, eleifend porttitor mauris. Maecenas sit amet ex vitae mi finibus pharetra. Donec vulputate leo eu vestibulum gravida. Ut in facilisis dolor, vitae iaculis dui.",
+                        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis luctus tortor nec bibendum malesuada. Etiam sed libero cursus, placerat est at, fermentum quam. In sed fringilla mauris. Fusce auctor turpis ac imperdiet porttitor. Duis vel pharetra magna, ut mollis libero. Etiam cursus in leo et viverra. Praesent egestas dui a magna eleifend, id elementum felis maximus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum sed elit gravida, euismod nunc id, ullamcorper tellus. Morbi elementum urna faucibus tempor lacinia. Quisque pharetra purus at risus tempor hendrerit. Nam dui justo, molestie quis tincidunt sit amet, eleifend porttitor mauris. Maecenas sit amet ex vitae mi finibus pharetra. Donec vulputate leo eu vestibulum gravida. Ut in facilisis dolor, vitae iaculis dui.',
                 },
                 {
-                    eventId: 57,
-                    row: 3,
-                    start: "2017-5-22 8:00",
-                    type: "point",
-                    content:
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis luctus tortor nec bibendum malesuada. Etiam sed libero cursus, placerat est at, fermentum quam. In sed fringilla mauris. Fusce auctor turpis ac imperdiet porttitor. Duis vel pharetra magna, ut mollis libero. Etiam cursus in leo et viverra. Praesent egestas dui a magna eleifend, id elementum felis maximus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum sed elit gravida, euismod nunc id, ullamcorper tellus. Morbi elementum urna faucibus tempor lacinia. Quisque pharetra purus at risus tempor hendrerit. Nam dui justo, molestie quis tincidunt sit amet, eleifend porttitor mauris. Maecenas sit amet ex vitae mi finibus pharetra. Donec vulputate leo eu vestibulum gravida. Ut in facilisis dolor, vitae iaculis dui.",
-                },
-                {
-                    eventId: 56,
-                    row: 3,
-                    start: "2017-5-26 8:00",
-                    relation: { after: 50, curve: "lb" },
-                    type: "point",
-                    content:
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis luctus tortor nec bibendum malesuada. Etiam sed libero cursus, placerat est at, fermentum quam. In sed fringilla mauris. Fusce auctor turpis ac imperdiet porttitor. Duis vel pharetra magna, ut mollis libero. Etiam cursus in leo et viverra. Praesent egestas dui a magna eleifend, id elementum felis maximus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum sed elit gravida, euismod nunc id, ullamcorper tellus. Morbi elementum urna faucibus tempor lacinia. Quisque pharetra purus at risus tempor hendrerit. Nam dui justo, molestie quis tincidunt sit amet, eleifend porttitor mauris. Maecenas sit amet ex vitae mi finibus pharetra. Donec vulputate leo eu vestibulum gravida. Ut in facilisis dolor, vitae iaculis dui.",
-                },
-                {
-                    eventId: 51,
+                    eventId: 2,
                     row: 2,
-                    start: "2017-5-22 10:30",
-                    type: "point",
-                    relation: { before: 50, curve: "lb" },
-                    bgColor: "#a3d6cc",
+                    start: '2017-5-18',
+                    relation: { after: 1, curve: 'lb'},
+                    type: 'point',
+                    content:
+                        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis luctus tortor nec bibendum malesuada. Etiam sed libero cursus, placerat est at, fermentum quam. In sed fringilla mauris. Fusce auctor turpis ac imperdiet porttitor. Duis vel pharetra magna, ut mollis libero. Etiam cursus in leo et viverra. Praesent egestas dui a magna eleifend, id elementum felis maximus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum sed elit gravida, euismod nunc id, ullamcorper tellus. Morbi elementum urna faucibus tempor lacinia. Quisque pharetra purus at risus tempor hendrerit. Nam dui justo, molestie quis tincidunt sit amet, eleifend porttitor mauris. Maecenas sit amet ex vitae mi finibus pharetra. Donec vulputate leo eu vestibulum gravida. Ut in facilisis dolor, vitae iaculis dui.',
+                },
+                {
+                    eventId: 3,
+                    row: 3,
+                    start: '2017-6-1',
+                    relation: { after: 2, curve: 'lb' },
+                    type: 'point',
+                    content:
+                        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis luctus tortor nec bibendum malesuada. Etiam sed libero cursus, placerat est at, fermentum quam. In sed fringilla mauris. Fusce auctor turpis ac imperdiet porttitor. Duis vel pharetra magna, ut mollis libero. Etiam cursus in leo et viverra. Praesent egestas dui a magna eleifend, id elementum felis maximus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum sed elit gravida, euismod nunc id, ullamcorper tellus. Morbi elementum urna faucibus tempor lacinia. Quisque pharetra purus at risus tempor hendrerit. Nam dui justo, molestie quis tincidunt sit amet, eleifend porttitor mauris. Maecenas sit amet ex vitae mi finibus pharetra. Donec vulputate leo eu vestibulum gravida. Ut in facilisis dolor, vitae iaculis dui.',
+                },
+                {
+                    eventId: 4,
+                    row: 4,
+                    start: '2017-7-2',
+                    type: 'point',
+                    relation: { after: 3, curve: 'lb' },
+                    bgColor: '#a3d6cc',
                     content:
                         "<p>In this way, you can include <em>HTML tags</em> in the event body.<br><i class='fa fa-ellipsis-v'></i><br><i class='fa fa-ellipsis-v'></i></p>",
                 },
                 {
-                    eventId: 52,
-                    start: "2017-5-23 12:45",
-                    row: 3,
-                    type: "point",
-                    bgColor: "#89c997",
-                    relation: { before: 50, curve: "lb" },
-                    color: "#ffffff",
-                    callback: "$('#myModal').modal()",
-                    content: "Show modal window via bootstrap",
-                },
-                {
-                    eventId: 53,
-                    start: "2017-5-24 12:45",
-                    row: 4,
-                    type: "point",
-                    bgColor: "#89c997",
-                    relation: { before: 52, curve: "lb" },
-                    color: "#ffffff",
-                    callback: "$('#myModal').modal()",
-                    content: "Show modal window via bootstrap",
-                },
-                {
-                    eventId: 54,
-                    start: "2017-5-25 12:45",
+                    eventId: 5,
+                    start: '2018-3-5',
                     row: 5,
-                    type: "point",
-                    bgColor: "#89c997",
-                    relation: { before: 53, curve: "lb" },
-                    color: "#ffffff",
-                    callback: "$('#myModal').modal()",
-                    content: "Show modal window via bootstrap",
+                    type: 'point',
+                    bgColor: '#89c997',
+                    relation: { after: 4, curve: 'lb' },
+                    content: 'Show modal window via bootstrap',
+                },
+                {
+                    eventId: 6,
+                    start: '2018-4-1',
+                    row: 6,
+                    type: 'point',
+                    bgColor: '#89c997',
+                    relation: { after: 5, curve: 'lb' },
+                    content: 'Show modal window via bootstrap',
                 },
             ],
             phoneList: [
-                "Linux Mainline",
-                "Android 4.4 LTS",
-                "Android 4.4",
-                "Qualcomm 4.4 Mainline",
-                "Qualcomm 4.4 Stable",
-                "Mi6",
+                'Linux Mainline',
+                'Linux LTS',
+                'Android',
+                'Qualcomm Mainline',
+                'Qualcomm Stable',
+                'Mi6',
             ],
         };
     }
@@ -93,23 +79,23 @@ class PhoneTimeline extends React.Component {
         this.$el = $(this.el);
         this.$el.Timeline({
             // "bar" or "point"
-            type: "mixed",
+            type: 'mixed',
 
             // "years" or "months" or "days"
-            scale: "days",
+            scale: 'months',
 
             // start <a href="https://www.jqueryscript.net/time-clock/">date</a> time
-            startDatetime: "2017-05-10",
+            startDatetime: '2017-4-1',
 
             // end date time
-            endDatetime: "auto",
+            endDatetime: '2018-4-1',
 
             // displays headline
             headline: {
                 display: true,
-                title: "Patch Graph",
+                title: 'Patch Graph',
                 range: true,
-                locale: "en-US",
+                locale: 'en-US',
                 format: { hour12: false },
             },
 
@@ -123,32 +109,32 @@ class PhoneTimeline extends React.Component {
             // displays ruler
             ruler: {
                 top: {
-                    lines: ["year", "month", "days"],
+                    lines: ['year', 'month'],
                     height: 75,
                     fontSize: 14,
-                    color: "#777777",
-                    background: "#FFFFFF",
-                    locale: "en-US",
-                    format: { hour12: false, day: "short" },
+                    color: '#777777',
+                    background: '#FFFFFF',
+                    locale: 'en-US',
+                    format: { hour12: false, day: 'short' },
                 },
             },
 
             // displays footer
             footer: {
                 display: true,
-                content: "",
+                content: '',
                 range: false,
-                locale: "en-US",
+                locale: 'en-US',
                 format: { hour12: false },
             },
 
             // displays event meta
             eventMeta: {
                 display: false,
-                scale: "day",
-                locale: "en-US",
+                scale: 'day',
+                locale: 'en-US',
                 format: { hour12: false },
-                content: "",
+                content: '',
             },
 
             // event data
@@ -159,16 +145,16 @@ class PhoneTimeline extends React.Component {
                 presentTime: true,
                 hoverEvent: true,
                 stripedGridRow: true,
-                horizontalGridStyle: "dotted",
-                verticalGridStyle: "solid",
+                horizontalGridStyle: 'dotted',
+                verticalGridStyle: 'solid',
             },
 
             colorScheme: {
                 // Added new option since v2.0.0
                 event: {
-                    text: "#343A40",
-                    border: "#6C757D",
-                    background: "#E7E7E7",
+                    text: '#343A40',
+                    border: '#6C757D',
+                    background: '#E7E7E7',
                 },
                 hookEventColors: () => null, // Added instead of merging setColorEvent of PR#37 since v2.0.0
             },
@@ -183,10 +169,10 @@ class PhoneTimeline extends React.Component {
             rowHeight: 50,
 
             // width of timeline
-            width: "auto",
+            width: 'auto',
 
             // height of timeline
-            height: "auto",
+            height: 'auto',
 
             // min size of <a href="https://www.jqueryscript.net/tags.php?/grid/">grid</a>
             minGridSize: 100,
@@ -195,19 +181,19 @@ class PhoneTimeline extends React.Component {
             marginHeight: 2,
 
             // "left", "center", "right", "current", "latest" or specific event id
-            rangeAlign: "latest",
+            rangeAlign: 'latest',
 
             // "default", false and selector
-            loader: "default",
+            loader: 'default',
 
             // loading message
-            loadingMessage: "Loading",
+            loadingMessage: 'Loading',
 
             // hides scrollbar
             hideScrollbar: false,
 
             // "session" or "local"
-            storage: "session",
+            storage: 'session',
 
             // loads cached events during reloading
             reloadCacheKeep: true,
@@ -222,7 +208,7 @@ class PhoneTimeline extends React.Component {
             firstDayOfWeek: 0,
 
             // "canvas" or "d3.js"
-            engine: "canvas",
+            engine: 'canvas',
 
             // avoid validation of the maximum of the scale grids
             disableLimitter: false,
@@ -231,26 +217,18 @@ class PhoneTimeline extends React.Component {
             debug: true,
         });
         this.addEvent = this.addEvent.bind(this);
-        this.$el.Timeline("addEvent",this.addEvent)
     }
 
     componentWillUnmount() {
-        this.$el.Timeline("destroy");
+        this.$el.Timeline('destroy');
+    }
+
+    updateTime(newData) {
+        this.$el.Timeline('addEvent', [newData]);
     }
 
     addEvent(eventdata) {
-        this.setState({
-            data: [...this.state.data, {
-                eventId: 58,
-                row: 4,
-                start: "2017-5-27 10:30",
-                type: "point",
-                relation: { before: 50, curve: "lb" },
-                bgColor: "#a3d6cc",
-                content:
-                    "<p>In this way, you can include <em>HTML tags</em> in the event body.<br><i class='fa fa-ellipsis-v'></i><br><i class='fa fa-ellipsis-v'></i></p>",
-            }],
-        });
+        this.updateTime(eventdata);
     }
 
     render() {
@@ -263,10 +241,10 @@ class PhoneTimeline extends React.Component {
                         this.addEvent({
                             eventId: 58,
                             row: 4,
-                            start: "2017-5-27 10:30",
-                            type: "point",
-                            relation: { before: 50, curve: "lb" },
-                            bgColor: "#a3d6cc",
+                            start: '2017-5-27 10:30',
+                            type: 'point',
+                            relation: { before: 50, curve: 'lb' },
+                            bgColor: '#a3d6cc',
                             content:
                                 "<p>In this way, you can include <em>HTML tags</em> in the event body.<br><i class='fa fa-ellipsis-v'></i><br><i class='fa fa-ellipsis-v'></i></p>",
                         });
