@@ -10,80 +10,66 @@ class PhoneTimeline extends React.Component {
         this.state = {
             data: [
                 {
-                    eventId: 50,
+                    eventId: 1,
                     row: 1,
-                    start: '2017-5-20 8:00',
+                    start: '2017-5-1',
                     type: 'point',
                     content:
                         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis luctus tortor nec bibendum malesuada. Etiam sed libero cursus, placerat est at, fermentum quam. In sed fringilla mauris. Fusce auctor turpis ac imperdiet porttitor. Duis vel pharetra magna, ut mollis libero. Etiam cursus in leo et viverra. Praesent egestas dui a magna eleifend, id elementum felis maximus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum sed elit gravida, euismod nunc id, ullamcorper tellus. Morbi elementum urna faucibus tempor lacinia. Quisque pharetra purus at risus tempor hendrerit. Nam dui justo, molestie quis tincidunt sit amet, eleifend porttitor mauris. Maecenas sit amet ex vitae mi finibus pharetra. Donec vulputate leo eu vestibulum gravida. Ut in facilisis dolor, vitae iaculis dui.',
                 },
                 {
-                    eventId: 57,
-                    row: 3,
-                    start: '2017-5-22 8:00',
-                    type: 'point',
-                    content:
-                        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis luctus tortor nec bibendum malesuada. Etiam sed libero cursus, placerat est at, fermentum quam. In sed fringilla mauris. Fusce auctor turpis ac imperdiet porttitor. Duis vel pharetra magna, ut mollis libero. Etiam cursus in leo et viverra. Praesent egestas dui a magna eleifend, id elementum felis maximus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum sed elit gravida, euismod nunc id, ullamcorper tellus. Morbi elementum urna faucibus tempor lacinia. Quisque pharetra purus at risus tempor hendrerit. Nam dui justo, molestie quis tincidunt sit amet, eleifend porttitor mauris. Maecenas sit amet ex vitae mi finibus pharetra. Donec vulputate leo eu vestibulum gravida. Ut in facilisis dolor, vitae iaculis dui.',
-                },
-                {
-                    eventId: 56,
-                    row: 3,
-                    start: '2017-5-26 8:00',
-                    relation: { after: 50, curve: 'lb' },
-                    type: 'point',
-                    content:
-                        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis luctus tortor nec bibendum malesuada. Etiam sed libero cursus, placerat est at, fermentum quam. In sed fringilla mauris. Fusce auctor turpis ac imperdiet porttitor. Duis vel pharetra magna, ut mollis libero. Etiam cursus in leo et viverra. Praesent egestas dui a magna eleifend, id elementum felis maximus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum sed elit gravida, euismod nunc id, ullamcorper tellus. Morbi elementum urna faucibus tempor lacinia. Quisque pharetra purus at risus tempor hendrerit. Nam dui justo, molestie quis tincidunt sit amet, eleifend porttitor mauris. Maecenas sit amet ex vitae mi finibus pharetra. Donec vulputate leo eu vestibulum gravida. Ut in facilisis dolor, vitae iaculis dui.',
-                },
-                {
-                    eventId: 51,
+                    eventId: 2,
                     row: 2,
-                    start: '2017-5-22 10:30',
+                    start: '2017-5-18',
+                    relation: { after: 1, curve: 'lb'},
                     type: 'point',
-                    relation: { before: 50, curve: 'lb' },
+                    content:
+                        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis luctus tortor nec bibendum malesuada. Etiam sed libero cursus, placerat est at, fermentum quam. In sed fringilla mauris. Fusce auctor turpis ac imperdiet porttitor. Duis vel pharetra magna, ut mollis libero. Etiam cursus in leo et viverra. Praesent egestas dui a magna eleifend, id elementum felis maximus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum sed elit gravida, euismod nunc id, ullamcorper tellus. Morbi elementum urna faucibus tempor lacinia. Quisque pharetra purus at risus tempor hendrerit. Nam dui justo, molestie quis tincidunt sit amet, eleifend porttitor mauris. Maecenas sit amet ex vitae mi finibus pharetra. Donec vulputate leo eu vestibulum gravida. Ut in facilisis dolor, vitae iaculis dui.',
+                },
+                {
+                    eventId: 3,
+                    row: 3,
+                    start: '2017-6-1',
+                    relation: { after: 2, curve: 'lb' },
+                    type: 'point',
+                    content:
+                        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis luctus tortor nec bibendum malesuada. Etiam sed libero cursus, placerat est at, fermentum quam. In sed fringilla mauris. Fusce auctor turpis ac imperdiet porttitor. Duis vel pharetra magna, ut mollis libero. Etiam cursus in leo et viverra. Praesent egestas dui a magna eleifend, id elementum felis maximus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum sed elit gravida, euismod nunc id, ullamcorper tellus. Morbi elementum urna faucibus tempor lacinia. Quisque pharetra purus at risus tempor hendrerit. Nam dui justo, molestie quis tincidunt sit amet, eleifend porttitor mauris. Maecenas sit amet ex vitae mi finibus pharetra. Donec vulputate leo eu vestibulum gravida. Ut in facilisis dolor, vitae iaculis dui.',
+                },
+                {
+                    eventId: 4,
+                    row: 4,
+                    start: '2017-7-2',
+                    type: 'point',
+                    relation: { after: 3, curve: 'lb' },
                     bgColor: '#a3d6cc',
                     content:
                         "<p>In this way, you can include <em>HTML tags</em> in the event body.<br><i class='fa fa-ellipsis-v'></i><br><i class='fa fa-ellipsis-v'></i></p>",
                 },
                 {
-                    eventId: 52,
-                    start: '2017-5-23 12:45',
-                    row: 3,
-                    type: 'point',
-                    bgColor: '#89c997',
-                    relation: { before: 50, curve: 'lb' },
-                    color: '#ffffff',
-                    callback: "$('#myModal').modal()",
-                    content: 'Show modal window via bootstrap',
-                },
-                {
-                    eventId: 53,
-                    start: '2017-5-24 12:45',
-                    row: 4,
-                    type: 'point',
-                    bgColor: '#89c997',
-                    relation: { before: 52, curve: 'lb' },
-                    color: '#ffffff',
-                    callback: "$('#myModal').modal()",
-                    content: 'Show modal window via bootstrap',
-                },
-                {
-                    eventId: 54,
-                    start: '2017-5-25 12:45',
+                    eventId: 5,
+                    start: '2018-3-5',
                     row: 5,
                     type: 'point',
                     bgColor: '#89c997',
-                    relation: { before: 53, curve: 'lb' },
-                    color: '#ffffff',
-                    callback: "$('#myModal').modal()",
+                    relation: { after: 4, curve: 'lb' },
+                    content: 'Show modal window via bootstrap',
+                },
+                {
+                    eventId: 6,
+                    start: '2018-4-1',
+                    row: 6,
+                    type: 'point',
+                    bgColor: '#89c997',
+                    relation: { after: 5, curve: 'lb' },
                     content: 'Show modal window via bootstrap',
                 },
             ],
             phoneList: [
                 'Linux Mainline',
-                'Android 4.4 LTS',
-                'Android 4.4',
-                'Qualcomm 4.4 Mainline',
-                'Qualcomm 4.4 Stable',
+                'Linux LTS',
+                'Android',
+                'Qualcomm Mainline',
+                'Qualcomm Stable',
                 'Mi6',
             ],
         };
@@ -96,13 +82,13 @@ class PhoneTimeline extends React.Component {
             type: 'mixed',
 
             // "years" or "months" or "days"
-            scale: 'days',
+            scale: 'months',
 
             // start <a href="https://www.jqueryscript.net/time-clock/">date</a> time
-            startDatetime: '2017-05-10',
+            startDatetime: '2017-4-1',
 
             // end date time
-            endDatetime: 'auto',
+            endDatetime: '2018-4-1',
 
             // displays headline
             headline: {
@@ -123,7 +109,7 @@ class PhoneTimeline extends React.Component {
             // displays ruler
             ruler: {
                 top: {
-                    lines: ['year', 'month', 'days'],
+                    lines: ['year', 'month'],
                     height: 75,
                     fontSize: 14,
                     color: '#777777',
@@ -231,7 +217,6 @@ class PhoneTimeline extends React.Component {
             debug: true,
         });
         this.addEvent = this.addEvent.bind(this);
-        this.$el.Timeline('addEvent', this.addEvent);
     }
 
     componentWillUnmount() {
