@@ -1,21 +1,27 @@
-import React, { forwardRef, useState, useImperativeHandle } from "react";
+import React, {
+    forwardRef,
+    useEffect,
+    useImperativeHandle,
+    useState,
+} from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import Pagination from "@material-ui/lab/Pagination";
 import { Button, Chip, Container, Typography } from "@material-ui/core";
 import { ToggleButton } from "@material-ui/lab";
+import jsonData from "./biqiandate.json";
 
 const useStyles = makeStyles((theme) => ({
     paper: {
         padding: theme.spacing(2),
-        height: theme.spacing(60),
+        height: theme.spacing(70),
         textAlign: "center",
         color: theme.palette.text.secondary,
     },
     button: {
-        width: theme.spacing(12),
-        fontSize: "13px",
+        width: theme.spacing(15),
+        fontSize: "10px",
         fontWeight: "bold",
         backgroundColor: "#FFFFFF",
         "&.Mui-selected": {
@@ -38,61 +44,55 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const PhoneTable = forwardRef(({ data }, ref) => {
+const CenteredGrid = forwardRef(({ data }, ref) => {
     const classes = useStyles();
-    const [PhoneData, setPhoneData] = useState({
-        Sony: false,
-        Mi: false,
-        Huawei: false,
-        Oneplus: false,
-        Oppo: false,
-        Samsung: false,
-        Vivo: false,
-        Pixel: false,
-        Coolpad: false,
-    });
-
+    const [CVElist, setCVElist] = useState({});
     const [page, setPage] = useState(1);
+    useEffect(() => {
+        var cvearray = {};
+        jsonData.map((item) => {
+            cvearray[item.CVEID] = false;
+        });
+        setCVElist(cvearray);
+    }, []);
     useImperativeHandle(ref, () => ({
-        getPhoneData: getPhoneData,
+        getCVElist: getCVElist,
     }));
-
-    const getPhoneData = () => {
-        return Object.keys(PhoneData).filter((key) => PhoneData[key] === true);
+    const getCVElist = () => {
+        return Object.keys(CVElist).filter((key) => CVElist[key] === true);
     };
 
     return (
         <Paper>
             <Container maxWidth="xl">
-                <Grid container className={classes.paper} spacing={5}>
+                <Grid container className={classes.paper}>
                     <Grid item xs={12}>
                         <Typography variant="body1" component="body2">
-                            Selected Phone Models:
+                            Selected CVEs:
                         </Typography>
                     </Grid>
                     <Grid item xs={12}>
-                        {getPhoneData().map((item) => (
-                            <Chip className={classes.chips} label={item} />
-                        ))}
+                            {getCVElist().map((item) => (
+                                <Chip className={classes.chips} label={item} />
+                            ))}
                     </Grid>
-                    <Grid item container xs={12}>
-                        {PhoneData ? (
-                            Object.keys(PhoneData)
+                    <Grid item container spacing={2} xs={12}>
+                        {CVElist ? (
+                            Object.keys(CVElist)
                                 .slice((page - 1) * 8, page * 8)
-                                .map((item, index) => {
+                                .map((item) => {
                                     return (
                                         <Grid item xs={6}>
                                             <ToggleButton
                                                 value={item}
-                                                selected={PhoneData[item]}
+                                                selected={CVElist[item]}
                                                 size="large"
                                                 className={classes.button}
                                                 onClick={() => {
-                                                    setPhoneData({
-                                                        ...PhoneData,
-                                                        [item]: !PhoneData[
-                                                            item
-                                                        ],
+                                                    console.log(CVElist);
+                                                    setCVElist({
+                                                        ...CVElist,
+                                                        [item]: !CVElist[item],
                                                     });
                                                 }}
                                             >
@@ -107,11 +107,10 @@ const PhoneTable = forwardRef(({ data }, ref) => {
                     </Grid>
                 </Grid>
                 <Pagination
+                    size="small"
                     className={classes.pagination}
                     count={
-                        PhoneData
-                            ? Math.ceil(Object.keys(PhoneData).length / 8)
-                            : 1
+                        CVElist ? Math.ceil(Object.keys(CVElist).length / 8) : 1
                     }
                     page={page}
                     onChange={(e, v) => {
@@ -124,4 +123,4 @@ const PhoneTable = forwardRef(({ data }, ref) => {
     );
 });
 
-export default PhoneTable;
+export default CenteredGrid;
