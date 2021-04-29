@@ -9,19 +9,23 @@ import { ToggleButton } from "@material-ui/lab";
 const useStyles = makeStyles((theme) => ({
     paper: {
         padding: theme.spacing(2),
+        height: theme.spacing(60),
         textAlign: "center",
         color: theme.palette.text.secondary,
     },
     button: {
-        padding: theme.spacing(2, 4, 2, 4),
+        width: theme.spacing(12),
+        fontSize: "13px",
+        fontWeight: "bold",
+        backgroundColor: "#FFFFFF",
         // '&:active': {
         //   boxShadow: 'none',
         //   backgroundColor: '#0062cc',
         //   borderColor: '#005cbf',
         // },
-        // '&:focus': {
-        //   boxShadow: '0 0 0 0.2rem rgba(0,123,255,.5)',
-        // },
+        "&:hover": {
+            backgroundColor: "#ffef62",
+        },
     },
     pagination: {
         padding: theme.spacing(6, 0, 3, 1),
@@ -30,68 +34,65 @@ const useStyles = makeStyles((theme) => ({
 
 const PhoneTable = forwardRef(({ data }, ref) => {
     const classes = useStyles();
-    const [PhoneData, setPhoneData] = useState([
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12,
-        13,
-        14,
-        15,
-    ]);
+    const [PhoneData, setPhoneData] = useState({
+        Sony: false,
+        Mi: false,
+        Huawei: false,
+        Oneplus: false,
+        Oppo: false,
+        Samsung: false,
+        Vivo: false,
+        Pixel: false,
+        Coolpad: false,
+    });
+
     const [page, setPage] = useState(1);
     useImperativeHandle(ref, () => ({
-        getPhoneData,
+        getPhoneData() {
+            return PhoneData;
+        },
     }));
 
-    const getPhoneData = () => {
-        return PhoneData;
-    };
+    const togglePhoneData = (index) => {};
 
     return (
         <Paper>
             <Container maxWidth="xl">
                 <Grid container className={classes.paper} spacing={5}>
                     {PhoneData ? (
-                        PhoneData.slice((page - 1) * 8, page * 8).map(
-                            (item, index) => {
+                        Object.keys(PhoneData)
+                            .slice((page - 1) * 8, page * 8)
+                            .map((item, index) => {
                                 return (
                                     <Grid item xs={6}>
                                         <ToggleButton
-                                            selected={item}
+                                            value={item}
+                                            selected={PhoneData[item]}
                                             size="large"
                                             className={classes.button}
-                                            onChange={() => {
-                                                let newPhoneData = PhoneData;
-                                                newPhoneData[
-                                                    index + (page - 1) * 8
-                                                ] = !newPhoneData[
-                                                    index + (page - 1) * 8
-                                                ];
-                                                setPhoneData(newPhoneData);
+                                            onClick={() => {
+                                                setPhoneData({
+                                                    ...PhoneData,
+                                                    [item]: !PhoneData[item],
+                                                });
                                             }}
                                         >
-                                            Phone {index + 1 + (page - 1) * 8}
+                                            {item}
                                         </ToggleButton>
                                     </Grid>
                                 );
-                            }
-                        )
+                            })
                     ) : (
                         <></>
                     )}
                 </Grid>
                 <Pagination
                     className={classes.pagination}
-                    count={PhoneData ? (PhoneData.length + 1) / 8 : 1}
+                    count={
+                        PhoneData
+                            ? Math.ceil(Object.keys(PhoneData).length / 8)
+                            : 1
+                    }
                     page={page}
                     onChange={(e, v) => {
                         setPage(v);

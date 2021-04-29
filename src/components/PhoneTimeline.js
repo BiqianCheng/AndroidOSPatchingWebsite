@@ -5,10 +5,10 @@ import "jq-timeline/dist/jquery.timeline.min.css";
 import { Button } from "@material-ui/core";
 
 class PhoneTimeline extends React.Component {
-    constructor({ data, phoneList }) {
-        super({ data, phoneList });
+    constructor({ selectedCVE, selectedPhone }) {
+        super({ selectedCVE, selectedPhone });
         this.state = {
-            data: [
+            eventData: [
                 {
                     eventId: 1,
                     row: 1,
@@ -139,7 +139,7 @@ class PhoneTimeline extends React.Component {
             },
 
             // event data
-            eventData: this.state.data,
+            eventData: this.state.eventData,
 
             // enables/disables effects
             effects: {
@@ -243,13 +243,13 @@ class PhoneTimeline extends React.Component {
     // Helper function to get date and add months
     getMinDate() {
         return new Date(
-            Math.min(...this.state.data.map((e) => new Date(e.start)))
+            Math.min(...this.state.eventData.map((e) => new Date(e.start)))
         );
     }
 
     getMaxDate() {
         return new Date(
-            Math.max(...this.state.data.map((e) => new Date(e.start)))
+            Math.max(...this.state.eventData.map((e) => new Date(e.start)))
         );
     }
 

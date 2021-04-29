@@ -1,27 +1,37 @@
-import React, { forwardRef, useImperativeHandle, useState } from "react";
+import React, {
+    forwardRef,
+    useEffect,
+    useImperativeHandle,
+    useState,
+} from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import Pagination from "@material-ui/lab/Pagination";
 import { Button, Container } from "@material-ui/core";
 import { ToggleButton } from "@material-ui/lab";
+import jsonData from "./biqiandate.json";
 
 const useStyles = makeStyles((theme) => ({
     paper: {
         padding: theme.spacing(2),
+        height: theme.spacing(70),
         textAlign: "center",
         color: theme.palette.text.secondary,
     },
     button: {
-        padding: theme.spacing(2, 4, 2, 4),
+        width: theme.spacing(12),
+        fontSize: "13px",
+        fontWeight: "bold",
+        backgroundColor: "#FFFFFF",
         // '&:active': {
         //   boxShadow: 'none',
         //   backgroundColor: '#0062cc',
         //   borderColor: '#005cbf',
         // },
-        // '&:focus': {
-        //   boxShadow: '0 0 0 0.2rem rgba(0,123,255,.5)',
-        // },
+        "&:hover": {
+            backgroundColor: "#ffef62",
+        },
     },
     pagination: {
         padding: theme.spacing(6, 0, 3, 1),
@@ -30,48 +40,62 @@ const useStyles = makeStyles((theme) => ({
 
 const CenteredGrid = forwardRef(({ data }, ref) => {
     const classes = useStyles();
-    const [CVEdata, setCVEdata] = useState([1, 2, 3, 4, 5, 6, 7, 8]);
-
+    const [CVElist, setCVElist] = useState({});
+    const [page, setPage] = useState(1);
+    useEffect(() => {
+        var cvearray = {};
+        jsonData.map((item) => {
+            cvearray[item.CVEID] = false;
+        });
+        setCVElist(cvearray);
+    }, []);
     useImperativeHandle(ref, () => ({
-        getCVEdata,
+        getCVElist() {
+            return Object.keys(CVElist).find((key) => CVElist[key] === true);
+        },
     }));
-
-    const getCVEdata = () => {
-        return CVEdata;
-    };
 
     return (
         <Paper>
             <Container maxWidth="xl">
                 <Grid container className={classes.paper} spacing={5}>
-                    {CVEdata ? (
-                        CVEdata.map((item, index) => {
-                            return (
-                                <Grid item xs={6}>
-                                    <ToggleButton
-                                        selected={item}
-                                        size="large"
-                                        className={classes.button}
-                                        onChange={() => {
-                                            let newCVEdata = CVEdata;
-                                            newCVEdata[index] = !newCVEdata[
-                                                index
-                                            ];
-                                            setCVEdata(newCVEdata);
-                                        }}
-                                    >
-                                        CVE {index + 1}
-                                    </ToggleButton>
-                                </Grid>
-                            );
-                        })
+                    {CVElist ? (
+                        Object.keys(CVElist)
+                            .slice((page - 1) * 8, page * 8)
+                            .map((item) => {
+                                return (
+                                    <Grid item xs={6}>
+                                        <ToggleButton
+                                            value={item}
+                                            selected={CVElist[item]}
+                                            size="large"
+                                            className={classes.button}
+                                            onClick={() => {
+                                                console.log(CVElist);
+                                                setCVElist({
+                                                    ...CVElist,
+                                                    [item]: !CVElist[item],
+                                                });
+                                            }}
+                                        >
+                                            {item}
+                                        </ToggleButton>
+                                    </Grid>
+                                );
+                            })
                     ) : (
                         <></>
                     )}
                 </Grid>
                 <Pagination
                     className={classes.pagination}
-                    count={CVEdata ? CVEdata % 8 : 1}
+                    count={
+                        CVElist ? Math.ceil(Object.keys(CVElist).length / 8) : 1
+                    }
+                    page={page}
+                    onChange={(e, v) => {
+                        setPage(v);
+                    }}
                     color="primary"
                 />
             </Container>
