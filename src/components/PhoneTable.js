@@ -9,13 +9,14 @@ import { ToggleButton } from "@material-ui/lab";
 const useStyles = makeStyles((theme) => ({
     paper: {
         padding: theme.spacing(2),
-        height: theme.spacing(60),
+        // height: theme.spacing(60),
         textAlign: "center",
         color: theme.palette.text.secondary,
     },
     button: {
-        width: theme.spacing(12),
-        fontSize: "13px",
+        // margin: theme.spacing(2)
+        width: theme.spacing(15),
+        fontSize: "10px",
         fontWeight: "bold",
         backgroundColor: "#FFFFFF",
         "&.Mui-selected": {
@@ -64,9 +65,9 @@ const PhoneTable = forwardRef(({ data }, ref) => {
     return (
         <Paper>
             <Container maxWidth="xl">
-                <Grid container className={classes.paper} spacing={5}>
+                <Grid container className={classes.paper} spacing={2}>
                     <Grid item xs={12}>
-                        <Typography variant="body1" component="body2">
+                        <Typography variant="body1" component="h6">
                             Selected Phone Models:
                         </Typography>
                     </Grid>
@@ -75,7 +76,7 @@ const PhoneTable = forwardRef(({ data }, ref) => {
                             <Chip className={classes.chips} label={item} />
                         ))}
                     </Grid>
-                    <Grid item container xs={12}>
+                    <Grid item container spacing={2} xs={12}>
                         {PhoneData ? (
                             Object.keys(PhoneData)
                                 .slice((page - 1) * 8, page * 8)

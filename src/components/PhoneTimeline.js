@@ -3,81 +3,94 @@ import $ from "jquery";
 import "jq-timeline/dist/jquery.timeline.min.js";
 import "jq-timeline/dist/jquery.timeline.min.css";
 import { Button } from "@material-ui/core";
+import jsonData from "../json/biqiandate.json";
 
 class PhoneTimeline extends React.Component {
-    constructor({ selectedCVE, selectedPhone }) {
-        super({ selectedCVE, selectedPhone });
+    constructor(props) {
+        super(props);
         this.state = {
-            eventData: [
-                {
-                    eventId: 1,
-                    row: 1,
-                    start: new Date("2017-5-1"),
-                    type: "point",
-                    content:
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis luctus tortor nec bibendum malesuada. Etiam sed libero cursus, placerat est at, fermentum quam. In sed fringilla mauris. Fusce auctor turpis ac imperdiet porttitor. Duis vel pharetra magna, ut mollis libero. Etiam cursus in leo et viverra. Praesent egestas dui a magna eleifend, id elementum felis maximus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum sed elit gravida, euismod nunc id, ullamcorper tellus. Morbi elementum urna faucibus tempor lacinia. Quisque pharetra purus at risus tempor hendrerit. Nam dui justo, molestie quis tincidunt sit amet, eleifend porttitor mauris. Maecenas sit amet ex vitae mi finibus pharetra. Donec vulputate leo eu vestibulum gravida. Ut in facilisis dolor, vitae iaculis dui.",
-                },
-                {
-                    eventId: 2,
-                    row: 2,
-                    start: new Date("2017-5-18"),
-                    relation: { after: 1, curve: "lb" },
-                    type: "point",
-                    content:
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis luctus tortor nec bibendum malesuada. Etiam sed libero cursus, placerat est at, fermentum quam. In sed fringilla mauris. Fusce auctor turpis ac imperdiet porttitor. Duis vel pharetra magna, ut mollis libero. Etiam cursus in leo et viverra. Praesent egestas dui a magna eleifend, id elementum felis maximus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum sed elit gravida, euismod nunc id, ullamcorper tellus. Morbi elementum urna faucibus tempor lacinia. Quisque pharetra purus at risus tempor hendrerit. Nam dui justo, molestie quis tincidunt sit amet, eleifend porttitor mauris. Maecenas sit amet ex vitae mi finibus pharetra. Donec vulputate leo eu vestibulum gravida. Ut in facilisis dolor, vitae iaculis dui.",
-                },
-                {
-                    eventId: 3,
-                    row: 3,
-                    start: new Date("2017-6-1"),
-                    relation: { after: 2, curve: "lb" },
-                    type: "point",
-                    content:
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis luctus tortor nec bibendum malesuada. Etiam sed libero cursus, placerat est at, fermentum quam. In sed fringilla mauris. Fusce auctor turpis ac imperdiet porttitor. Duis vel pharetra magna, ut mollis libero. Etiam cursus in leo et viverra. Praesent egestas dui a magna eleifend, id elementum felis maximus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum sed elit gravida, euismod nunc id, ullamcorper tellus. Morbi elementum urna faucibus tempor lacinia. Quisque pharetra purus at risus tempor hendrerit. Nam dui justo, molestie quis tincidunt sit amet, eleifend porttitor mauris. Maecenas sit amet ex vitae mi finibus pharetra. Donec vulputate leo eu vestibulum gravida. Ut in facilisis dolor, vitae iaculis dui.",
-                },
-                {
-                    eventId: 4,
-                    row: 4,
-                    start: new Date("2017-7-2"),
-                    type: "point",
-                    relation: { after: 3, curve: "lb" },
-                    bgColor: "#a3d6cc",
-                    content:
-                        "<p>In this way, you can include <em>HTML tags</em> in the event body.<br><i class='fa fa-ellipsis-v'></i><br><i class='fa fa-ellipsis-v'></i></p>",
-                },
-                {
-                    eventId: 5,
-                    start: new Date("2018-3-5"),
-                    row: 5,
-                    type: "point",
-                    bgColor: "#89c997",
-                    relation: { after: 4, curve: "lb" },
-                    content: "Show modal window via bootstrap",
-                },
-                {
-                    eventId: 6,
-                    start: new Date("2018-4-1"),
-                    row: 6,
-                    type: "point",
-                    bgColor: "#89c997",
-                    relation: { after: 5, curve: "lb" },
-                    content: "Show modal window via bootstrap",
-                },
-            ],
-            phoneList: [
-                "Linux Mainline",
-                "Linux LTS",
-                "Android",
-                "Qualcomm Mainline",
-                "Qualcomm Stable",
-                "Mi6",
-            ],
+            Loaded: false,
+            eventData: [],
+            phoneList: [],
         };
     }
 
     componentDidMount() {
         this.$el = $(this.el);
 
+        this.generateTimeline = this.generateTimeline.bind(this);
+        this.addMonths = this.addMonths.bind(this);
+        this.addEvent = this.addEvent.bind(this);
+        this.alignment = this.alignment.bind(this);
+        this.dateback = this.dateback.bind(this);
+        this.dateforth = this.dateforth.bind(this);
+        this.hide = this.hide.bind(this);
+        this.initizalized = this.initizalized.bind(this);
+        this.openEvent = this.openEvent.bind(this);
+        this.reload = this.reload.bind(this);
+        this.removeEvent = this.removeEvent.bind(this);
+        this.show = this.show.bind(this);
+        this.showLoader = this.showLoader.bind(this);
+        this.updateEvent = this.updateEvent.bind(this);
+
+        // this.convertDataPoint = this.convertDataPoin.bind(this);
+        // this.getMinDate = this.getMaxDate.bind(this);
+        // this.getMaxDate = this.getMaxDate.bind(this);
+    }
+
+    convertDataPoint(cveData) {
+        console.log(cveData);
+        // console.log(jsonData);
+        var resultData = jsonData.filter((item) =>
+            cveData.includes(item.CVEID)
+        );
+        var dataNode = [];
+        resultData.map((item) => {
+            dataNode = dataNode.concat(item.data);
+        });
+
+        console.log(dataNode);
+        var phoneModels = {};
+
+        var resultEventData = dataNode
+            .map((item, index) => {
+                if (!phoneModels.hasOwnProperty(item.version)) {
+                    phoneModels[item.version] = index;
+                }
+                if (
+                    item.patchdate === "None" ||
+                    item.patchdate === "notpatched"
+                ) {
+                    return;
+                } else {
+                    console.log(item.patchdate);
+                    return {
+                        row: phoneModels[item.version] + 1,
+                        start: new Date(item.patchdate),
+                        type: "point",
+                        content: item.version,
+                    };
+                }
+            })
+            .filter((item) => item !== undefined);
+
+        console.log(phoneModels);
+        this.setState(
+            {
+                eventData: resultEventData,
+                phoneList: [...Object.keys(phoneModels)],
+            },
+            () => {
+                console.log(this.state.eventData, this.state.phoneList);
+                this.generateTimeline(
+                    this.state.eventData,
+                    this.state.phoneList
+                );
+            }
+        );
+    }
+
+    generateTimeline(data, phoneList) {
         this.$el.Timeline({
             // "bar" or "point"
             type: "mixed",
@@ -104,7 +117,7 @@ class PhoneTimeline extends React.Component {
             sidebar: {
                 sticky: true,
                 overlay: false,
-                list: this.state.phoneList, //  an array of items
+                list: phoneList, //  an array of items
             },
 
             // displays ruler
@@ -116,7 +129,11 @@ class PhoneTimeline extends React.Component {
                     color: "#777777",
                     background: "#FFFFFF",
                     locale: "en-US",
-                    format: { hour12: false, year: "long", month: "numeric" },
+                    format: {
+                        hour12: false,
+                        year: "long",
+                        month: "numeric",
+                    },
                 },
             },
 
@@ -139,7 +156,7 @@ class PhoneTimeline extends React.Component {
             },
 
             // event data
-            eventData: this.state.eventData,
+            eventData: data,
 
             // enables/disables effects
             effects: {
@@ -164,7 +181,7 @@ class PhoneTimeline extends React.Component {
             range: 12,
 
             // numer of timeline rows
-            rows: 6,
+            rows: phoneList.length,
 
             // height of row
             rowHeight: 50,
@@ -215,32 +232,14 @@ class PhoneTimeline extends React.Component {
             disableLimitter: false,
 
             // debug mode
-            debug: true,
+            debug: false,
         });
-
-        this.getMinDate = this.getMaxDate.bind(this);
-        this.getMaxDate = this.getMaxDate.bind(this);
-        this.addMonths = this.addMonths.bind(this);
-
-        this.addEvent = this.addEvent.bind(this);
-        this.alignment = this.alignment.bind(this);
-        this.dateback = this.dateback.bind(this);
-        this.dateforth = this.dateforth.bind(this);
-        this.hide = this.hide.bind(this);
-        this.initizalized = this.initizalized.bind(this);
-        this.openEvent = this.openEvent.bind(this);
-        this.reload = this.reload.bind(this);
-        this.removeEvent = this.removeEvent.bind(this);
-        this.show = this.show.bind(this);
-        this.showLoader = this.showLoader.bind(this);
-        this.updateEvent = this.updateEvent.bind(this);
     }
 
     componentWillUnmount() {
         this.$el.Timeline("destroy");
     }
 
-    // Helper function to get date and add months
     getMinDate() {
         return new Date(
             Math.min(...this.state.eventData.map((e) => new Date(e.start)))
@@ -253,6 +252,7 @@ class PhoneTimeline extends React.Component {
         );
     }
 
+    // Helper function to get date and add months
     addMonths(date, months) {
         var d = date.getDate();
         date.setMonth(date.getMonth() + +months);
@@ -315,59 +315,94 @@ class PhoneTimeline extends React.Component {
         return (
             <>
                 <div ref={(el) => (this.el = el)} />
-                <Button
-                    variant="contained"
-                    onClick={() => {
-                        this.show();
-                        // this.hide({
-                        //     eventId: 58,
-                        //     row: 4,
-                        //     start: "2017-5-27 10:30",
-                        //     type: "point",
-                        //     relation: { before: 50, curve: "lb" },
-                        //     bgColor: "#a3d6cc",
-                        //     content:
-                        //         "<p>In this way, you can include <em>HTML tags</em> in the event body.<br><i class='fa fa-ellipsis-v'></i><br><i class='fa fa-ellipsis-v'></i></p>",
-                        // });
-                    }}
-                >
-                    Show
-                </Button>
-                <Button
-                    variant="contained"
-                    onClick={() => {
-                        this.hide();
-                        // this.hide({
-                        //     eventId: 58,
-                        //     row: 4,
-                        //     start: "2017-5-27 10:30",
-                        //     type: "point",
-                        //     relation: { before: 50, curve: "lb" },
-                        //     bgColor: "#a3d6cc",
-                        //     content:
-                        //         "<p>In this way, you can include <em>HTML tags</em> in the event body.<br><i class='fa fa-ellipsis-v'></i><br><i class='fa fa-ellipsis-v'></i></p>",
-                        // });
-                    }}
-                >
-                    Hide
-                </Button>
-                <Button
-                    variant="contained"
-                    onClick={() => {
-                        this.addEvent({
-                            eventId: 58,
-                            row: 4,
-                            start: "2017-5-27 10:30",
-                            type: "point",
-                            relation: { before: 50, curve: "lb" },
-                            bgColor: "#a3d6cc",
-                            content:
-                                "<p>In this way, you can include <em>HTML tags</em> in the event body.<br><i class='fa fa-ellipsis-v'></i><br><i class='fa fa-ellipsis-v'></i></p>",
-                        });
-                    }}
-                >
-                    addEvent
-                </Button>
+                {!this.state.Loaded ? (
+                    <Button
+                        variant="contained"
+                        onClick={() => {
+                            this.convertDataPoint(this.props.selectedCVE);
+                            // console.log(this.state.eventData);
+                            // console.log(this.state.phoneList);
+                            // this.generateTimeline(
+                            //     this.state.eventData,
+                            //     this.state.phoneList
+                            // );
+                            // this.hide({
+                            //     eventId: 58,
+                            //     row: 4,
+                            //     start: "2017-5-27 10:30",
+                            //     type: "point",
+                            //     relation: { before: 50, curve: "lb" },
+                            //     bgColor: "#a3d6cc",
+                            //     content:
+                            //         "<p>In this way, you can include <em>HTML tags</em> in the event body.<br><i class='fa fa-ellipsis-v'></i><br><i class='fa fa-ellipsis-v'></i></p>",
+                            // });
+                            this.setState({ Loaded: true });
+                        }}
+                    >
+                        Generate
+                    </Button>
+                ) : (
+                    <></>
+                )}
+                {this.state.Loaded ? (
+                    <React.Fragment>
+                        <Button
+                            variant="contained"
+                            onClick={() => {
+                                this.show();
+                                // this.hide({
+                                //     eventId: 58,
+                                //     row: 4,
+                                //     start: "2017-5-27 10:30",
+                                //     type: "point",
+                                //     relation: { before: 50, curve: "lb" },
+                                //     bgColor: "#a3d6cc",
+                                //     content:
+                                //         "<p>In this way, you can include <em>HTML tags</em> in the event body.<br><i class='fa fa-ellipsis-v'></i><br><i class='fa fa-ellipsis-v'></i></p>",
+                                // });
+                            }}
+                        >
+                            Show
+                        </Button>
+                        <Button
+                            variant="contained"
+                            onClick={() => {
+                                this.hide();
+                                // this.hide({
+                                //     eventId: 58,
+                                //     row: 4,
+                                //     start: "2017-5-27 10:30",
+                                //     type: "point",
+                                //     relation: { before: 50, curve: "lb" },
+                                //     bgColor: "#a3d6cc",
+                                //     content:
+                                //         "<p>In this way, you can include <em>HTML tags</em> in the event body.<br><i class='fa fa-ellipsis-v'></i><br><i class='fa fa-ellipsis-v'></i></p>",
+                                // });
+                            }}
+                        >
+                            Hide
+                        </Button>
+                        {/* <Button
+                            variant="contained"
+                            onClick={() => {
+                                this.addEvent({
+                                    eventId: 58,
+                                    row: 4,
+                                    start: "2017-5-27 10:30",
+                                    type: "point",
+                                    relation: { before: 50, curve: "lb" },
+                                    bgColor: "#a3d6cc",
+                                    content:
+                                        "<p>In this way, you can include <em>HTML tags</em> in the event body.<br><i class='fa fa-ellipsis-v'></i><br><i class='fa fa-ellipsis-v'></i></p>",
+                                });
+                            }}
+                        >
+                            addEvent
+                        </Button> */}
+                    </React.Fragment>
+                ) : (
+                    <></>
+                )}
             </>
         );
     }

@@ -10,12 +10,12 @@ import Grid from "@material-ui/core/Grid";
 import Pagination from "@material-ui/lab/Pagination";
 import { Button, Chip, Container, Typography } from "@material-ui/core";
 import { ToggleButton } from "@material-ui/lab";
-import jsonData from "./biqiandate.json";
+import jsonData from "../json/biqiandate.json";
 
 const useStyles = makeStyles((theme) => ({
     paper: {
         padding: theme.spacing(2),
-        height: theme.spacing(70),
+        // height: theme.spacing(70),
         textAlign: "center",
         color: theme.palette.text.secondary,
     },
@@ -65,16 +65,16 @@ const CenteredGrid = forwardRef(({ data }, ref) => {
     return (
         <Paper>
             <Container maxWidth="xl">
-                <Grid container className={classes.paper}>
+                <Grid container className={classes.paper} spacing={2}>
                     <Grid item xs={12}>
-                        <Typography variant="body1" component="body2">
+                        <Typography variant="body1" component="h6">
                             Selected CVEs:
                         </Typography>
                     </Grid>
                     <Grid item xs={12}>
-                            {getCVElist().map((item) => (
-                                <Chip className={classes.chips} label={item} />
-                            ))}
+                        {getCVElist().map((item) => (
+                            <Chip className={classes.chips} label={item} />
+                        ))}
                     </Grid>
                     <Grid item container spacing={2} xs={12}>
                         {CVElist ? (
@@ -89,7 +89,7 @@ const CenteredGrid = forwardRef(({ data }, ref) => {
                                                 size="large"
                                                 className={classes.button}
                                                 onClick={() => {
-                                                    console.log(CVElist);
+                                                    // console.log(CVElist);
                                                     setCVElist({
                                                         ...CVElist,
                                                         [item]: !CVElist[item],

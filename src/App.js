@@ -3,12 +3,14 @@ import CVETable from "./components/CVETable.js";
 import PhoneTable from "../src/components/PhoneTable.js";
 import PhoneTimeline from "../src/components/PhoneTimeline.js";
 import Grid from "@material-ui/core/Grid";
-import { Button, Container, Typography } from "@material-ui/core";
+import { Button, Typography } from "@material-ui/core";
 import { useEffect, useRef, useState } from "react";
 
 function App() {
     const refC = useRef();
     const refP = useRef();
+    const [CVE, setCVE] = useState();
+    const [Phone, setPhone] = useState();
     return (
         <div className="App">
             <header className="App-header"></header>
@@ -32,10 +34,7 @@ function App() {
                     <CVETable ref={refC}></CVETable>
                 </Grid>
                 <Grid item xs={6}>
-                    <PhoneTimeline
-                        getCVElist={refC.current.getCVElist}
-                        getPhoneData={refP.current.getPhoneData}
-                    />
+                    <PhoneTimeline selectedCVE={CVE} selectedPhone={Phone} />
                 </Grid>
                 <Grid item xs={3}>
                     <PhoneTable ref={refP}></PhoneTable>
@@ -47,10 +46,14 @@ function App() {
             <Button
                 onClick={() => {
                     console.log(refC.current.getCVElist());
-                    console.log(refP.current.getPhoneData());
+                    // console.log(refP.current.getPhoneData());
+                    var resultCVE = refC.current.getCVElist();
+                    var resultPhone = refP.current.getPhoneData();
+                    setCVE(resultCVE);
+                    setPhone(resultPhone);
                 }}
             >
-                TEST
+                Test
             </Button>
             {/* </Container> */}
         </div>
