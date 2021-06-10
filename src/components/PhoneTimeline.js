@@ -3,7 +3,21 @@ import $ from "jquery";
 import "jq-timeline/dist/jquery.timeline.min.js";
 import "jq-timeline/dist/jquery.timeline.min.css";
 import { Button } from "@material-ui/core";
-import jsonData from "../json/biqiandate.json";
+import jsonData from "../json/data.json";
+import config from "../json/config.json";
+
+String.prototype.hashCode = function () {
+    var hash = 0,
+        i,
+        chr;
+    if (this.length === 0) return hash;
+    for (i = 0; i < this.length; i++) {
+        chr = this.charCodeAt(i);
+        hash = (hash << 5) - hash + chr;
+        hash |= 0; // Convert to 32bit integer
+    }
+    return Math.abs(hash);
+};
 
 class PhoneTimeline extends React.Component {
     constructor(props) {
@@ -11,7 +25,7 @@ class PhoneTimeline extends React.Component {
         this.state = {
             Loaded: false,
             eventData: [],
-            phoneList: [],
+            phoneList: config.data,
         };
     }
 
@@ -32,65 +46,97 @@ class PhoneTimeline extends React.Component {
         this.show = this.show.bind(this);
         this.showLoader = this.showLoader.bind(this);
         this.updateEvent = this.updateEvent.bind(this);
-
+        this.destroy = this.destroy.bind(this);
         // this.convertDataPoint = this.convertDataPoin.bind(this);
         // this.getMinDate = this.getMaxDate.bind(this);
         // this.getMaxDate = this.getMaxDate.bind(this);
     }
 
-    convertDataPoint(cveData) {
+    convertDataPoint(cveData, reloadFlag) {
         console.log(cveData);
-        // console.log(jsonData);
         var resultData = jsonData.filter((item) =>
             cveData.includes(item.CVEID)
         );
-        var dataNode = [];
-        resultData.map((item) => {
-            dataNode = dataNode.concat(item.data);
-        });
+        console.log(resultData);
 
-        console.log(dataNode);
-        var phoneModels = {};
-
-        var resultEventData = dataNode
-            .map((item, index) => {
-                if (!phoneModels.hasOwnProperty(item.version)) {
-                    phoneModels[item.version] = index;
-                }
-                if (
-                    item.patchdate === "None" ||
-                    item.patchdate === "notpatched"
-                ) {
-                    return;
-                } else {
-                    console.log(item.patchdate);
-                    return {
-                        row: phoneModels[item.version] + 1,
-                        start: new Date(item.patchdate),
-                        type: "point",
-                        content: item.version,
-                    };
-                }
+        var resultEventData = resultData
+            .map((item) => {
+                console.log(this.props.selectedPhone);
+                console.log(item);
+                return item.phoneModels
+                    .filter((item) =>
+                        item.phoneModel.includes(this.props.selectedPhone)
+                    )[0]
+                    .patchdates.map((dates, i) => {
+                        // console.log(this.state.phoneList);
+                        // this.setState({
+                        //     phoneList: [...this.state.phoneList, dates[0]],
+                        // });
+                        // console.log(String(item.CVEID.concat(dates[0])).hashCode(), i);
+                        if (dates[1] === "notpatched" || dates[1] === "None") {
+                            return;
+                        }
+                        if (i === 0) {
+                            console.log(item.CVEID.concat(dates[0]));
+                            return {
+                                eventId: String(
+                                    item.CVEID.concat(dates[0])
+                                ).hashCode(),
+                                row: this.state.phoneList.indexOf(dates[0]) + 1,
+                                start: new Date(dates[1]),
+                                type: "point",
+                                content: item.CVEID,
+                            };
+                        } else {
+                            console.log(
+                                item.CVEID.concat(
+                                    item.phoneModels.find((item) =>
+                                        item.phoneModel.includes(
+                                            this.props.selectedPhone
+                                        )
+                                    ).patchdates[i - 1][0]
+                                )
+                            );
+                            return {
+                                eventId: String(
+                                    item.CVEID.concat(dates[0])
+                                ).hashCode(),
+                                row: this.state.phoneList.indexOf(dates[0]) + 1,
+                                start: new Date(dates[1]),
+                                type: "point",
+                                relation: {
+                                    before: String(
+                                        item.CVEID.concat(
+                                            item.phoneModels.find((item) =>
+                                                item.phoneModel.includes(
+                                                    this.props.selectedPhone
+                                                )
+                                            ).patchdates[i - 1][0]
+                                        )
+                                    ).hashCode(),
+                                    curve: true,
+                                },
+                                content: item.CVEID,
+                            };
+                        }
+                    });
             })
+            .flat(1)
             .filter((item) => item !== undefined);
 
-        console.log(phoneModels);
+        console.log(resultEventData);
+
         this.setState(
             {
                 eventData: resultEventData,
-                phoneList: [...Object.keys(phoneModels)],
             },
             () => {
-                console.log(this.state.eventData, this.state.phoneList);
-                this.generateTimeline(
-                    this.state.eventData,
-                    this.state.phoneList
-                );
+                this.generateTimeline();
             }
         );
     }
 
-    generateTimeline(data, phoneList) {
+    generateTimeline() {
         this.$el.Timeline({
             // "bar" or "point"
             type: "mixed",
@@ -117,7 +163,7 @@ class PhoneTimeline extends React.Component {
             sidebar: {
                 sticky: true,
                 overlay: false,
-                list: phoneList, //  an array of items
+                list: this.state.phoneList, //  an array of items
             },
 
             // displays ruler
@@ -156,7 +202,7 @@ class PhoneTimeline extends React.Component {
             },
 
             // event data
-            eventData: data,
+            eventData: this.state.eventData,
 
             // enables/disables effects
             effects: {
@@ -181,7 +227,7 @@ class PhoneTimeline extends React.Component {
             range: 12,
 
             // numer of timeline rows
-            rows: phoneList.length,
+            rows: this.state.phoneList.length,
 
             // height of row
             rowHeight: 50,
@@ -311,6 +357,10 @@ class PhoneTimeline extends React.Component {
         this.$el.Timeline("updateEvent", [eventdata], callback, userdata);
     }
 
+    destroy() {
+        this.$el.Timeline("destroy");
+    }
+
     render() {
         return (
             <>
@@ -320,22 +370,7 @@ class PhoneTimeline extends React.Component {
                         variant="contained"
                         onClick={() => {
                             this.convertDataPoint(this.props.selectedCVE);
-                            // console.log(this.state.eventData);
-                            // console.log(this.state.phoneList);
-                            // this.generateTimeline(
-                            //     this.state.eventData,
-                            //     this.state.phoneList
-                            // );
-                            // this.hide({
-                            //     eventId: 58,
-                            //     row: 4,
-                            //     start: "2017-5-27 10:30",
-                            //     type: "point",
-                            //     relation: { before: 50, curve: "lb" },
-                            //     bgColor: "#a3d6cc",
-                            //     content:
-                            //         "<p>In this way, you can include <em>HTML tags</em> in the event body.<br><i class='fa fa-ellipsis-v'></i><br><i class='fa fa-ellipsis-v'></i></p>",
-                            // });
+
                             this.setState({ Loaded: true });
                         }}
                     >
@@ -350,16 +385,6 @@ class PhoneTimeline extends React.Component {
                             variant="contained"
                             onClick={() => {
                                 this.show();
-                                // this.hide({
-                                //     eventId: 58,
-                                //     row: 4,
-                                //     start: "2017-5-27 10:30",
-                                //     type: "point",
-                                //     relation: { before: 50, curve: "lb" },
-                                //     bgColor: "#a3d6cc",
-                                //     content:
-                                //         "<p>In this way, you can include <em>HTML tags</em> in the event body.<br><i class='fa fa-ellipsis-v'></i><br><i class='fa fa-ellipsis-v'></i></p>",
-                                // });
                             }}
                         >
                             Show
@@ -368,16 +393,6 @@ class PhoneTimeline extends React.Component {
                             variant="contained"
                             onClick={() => {
                                 this.hide();
-                                // this.hide({
-                                //     eventId: 58,
-                                //     row: 4,
-                                //     start: "2017-5-27 10:30",
-                                //     type: "point",
-                                //     relation: { before: 50, curve: "lb" },
-                                //     bgColor: "#a3d6cc",
-                                //     content:
-                                //         "<p>In this way, you can include <em>HTML tags</em> in the event body.<br><i class='fa fa-ellipsis-v'></i><br><i class='fa fa-ellipsis-v'></i></p>",
-                                // });
                             }}
                         >
                             Hide
@@ -385,19 +400,11 @@ class PhoneTimeline extends React.Component {
                         {/* <Button
                             variant="contained"
                             onClick={() => {
-                                this.addEvent({
-                                    eventId: 58,
-                                    row: 4,
-                                    start: "2017-5-27 10:30",
-                                    type: "point",
-                                    relation: { before: 50, curve: "lb" },
-                                    bgColor: "#a3d6cc",
-                                    content:
-                                        "<p>In this way, you can include <em>HTML tags</em> in the event body.<br><i class='fa fa-ellipsis-v'></i><br><i class='fa fa-ellipsis-v'></i></p>",
-                                });
+                                this.destroy();
+                                this.convertDataPoint(this.props.selectedCVE);
                             }}
                         >
-                            addEvent
+                            Regenerate
                         </Button> */}
                     </React.Fragment>
                 ) : (
