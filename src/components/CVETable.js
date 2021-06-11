@@ -1,21 +1,25 @@
-import React, {
-    forwardRef,
-    useEffect,
-    useImperativeHandle,
-    useState,
-} from "react";
+import React, { forwardRef, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import Pagination from "@material-ui/lab/Pagination";
-import { Button, Chip, Container, Typography } from "@material-ui/core";
-import { ToggleButton } from "@material-ui/lab";
-import jsonData from "../json/biqiandate.json";
+import {
+    Chip,
+    Container,
+    TextField,
+    Tooltip,
+    Typography,
+} from "@material-ui/core";
+import { Autocomplete, ToggleButton } from "@material-ui/lab";
+import { getSelectedList } from "../utils/utils";
+import cveData from "../json/data.json";
 
 const useStyles = makeStyles((theme) => ({
+    popoverPaper: {
+        padding: theme.spacing(1),
+    },
     paper: {
         padding: theme.spacing(2),
-        // height: theme.spacing(70),
         textAlign: "center",
         color: theme.palette.text.secondary,
     },
@@ -25,9 +29,7 @@ const useStyles = makeStyles((theme) => ({
         fontWeight: "bold",
         backgroundColor: "#FFFFFF",
         "&.Mui-selected": {
-            // boxShadow: "none",
             backgroundColor: "#e6ce00",
-            // borderColor: "#005cbf",
             "&:hover": {
                 backgroundColor: "#ffef62",
             },
@@ -42,37 +44,85 @@ const useStyles = makeStyles((theme) => ({
     pagination: {
         padding: theme.spacing(6, 0, 3, 1),
     },
+    popover: {
+        pointerEvents: "none",
+    },
 }));
 
-const CenteredGrid = forwardRef(({ data }, ref) => {
+const CVETable = forwardRef(({ CVElist, setCVElist, selectedPhone }) => {
     const classes = useStyles();
-    const [CVElist, setCVElist] = useState({});
     const [page, setPage] = useState(1);
-    useEffect(() => {
-        var cvearray = {};
-        jsonData.map((item) => {
-            cvearray[item.CVEID] = false;
-        });
-        setCVElist(cvearray);
-    }, []);
-    useImperativeHandle(ref, () => ({
-        getCVElist: getCVElist,
-    }));
-    const getCVElist = () => {
-        return Object.keys(CVElist).filter((key) => CVElist[key] === true);
-    };
+    const [selectedCVE, setSelectedCVE] = useState(undefined);
+    const [searchInput, setSearchInput] = useState();
+    const [searchValue, setSearchValue] = useState();
 
     return (
         <Paper>
             <Container maxWidth="xl">
                 <Grid container className={classes.paper} spacing={2}>
                     <Grid item xs={12}>
+                        <Autocomplete
+                            id="search-cve-autocomplete"
+                            options={Object.keys(CVElist)}
+                            getOptionDisabled={(option) =>
+                                selectedCVE
+                                    ? option !== selectedCVE
+                                    : cveData.filter((item) => {
+                                          item.phoneModels.some(
+                                              (e) =>
+                                                  e.phoneModel === selectedPhone
+                                          );
+                                      })
+                            }
+                            style={{ width: 300 }}
+                            value={searchValue}
+                            onChange={(event, newValue) => {
+                                if (newValue) {
+                                    if (newValue !== selectedCVE) {
+                                        if (CVElist[newValue]) {
+                                            setCVElist({
+                                                ...CVElist,
+                                                [newValue]: false,
+                                            });
+                                            setSelectedCVE(undefined);
+                                        } else {
+                                            setCVElist({
+                                                ...CVElist,
+                                                [newValue]: true,
+                                            });
+                                            setSelectedCVE(newValue);
+                                        }
+                                    }
+                                } else {
+                                    setCVElist({
+                                        ...CVElist,
+                                        [searchValue]: false,
+                                    });
+                                    setSelectedCVE(undefined);
+                                }
+                                setSearchValue(newValue);
+                            }}
+                            inputValue={searchInput}
+                            onInputChange={(event, newInputValue) => {
+                                setSearchInput(newInputValue);
+                            }}
+                            renderInput={(params) => (
+                                <TextField
+                                    {...params}
+                                    placeholder="Search CVE"
+                                    variant="outlined"
+                                />
+                            )}
+                        />
+                    </Grid>
+                    <Grid item xs={12}>
                         <Typography variant="body1" component="h6">
                             Selected CVEs:
+                            {console.log(selectedPhone)}
                         </Typography>
                     </Grid>
                     <Grid item xs={12}>
-                        {getCVElist().map((item) => (
+                        {getSelectedList(CVElist).map((item) => (
                             <Chip className={classes.chips} label={item} />
                         ))}
                     </Grid>
@@ -83,21 +133,72 @@ const CenteredGrid = forwardRef(({ data }, ref) => {
                                 .map((item) => {
                                     return (
                                         <Grid item xs={6}>
-                                            <ToggleButton
-                                                value={item}
-                                                selected={CVElist[item]}
-                                                size="large"
-                                                className={classes.button}
-                                                onClick={() => {
-                                                    // console.log(CVElist);
-                                                    setCVElist({
-                                                        ...CVElist,
-                                                        [item]: !CVElist[item],
-                                                    });
-                                                }}
+                                            <Tooltip
+                                                placement="right-start"
+                                                title={
+                                                    <React.Fragment>
+                                                        <Typography variant="body2">
+                                                            Patch Date:
+                                                        </Typography>
+                                                        <Typography variant="body1">
+                                                            {
+                                                                cveData.filter(
+                                                                    (single) =>
+                                                                        single.CVEID ===
+                                                                        item
+                                                                )[0].startdate
+                                                            }
+                                                        </Typography>
+                                                    </React.Fragment>
+                                                }
                                             >
-                                                {item}
-                                            </ToggleButton>
+                                                <ToggleButton
+                                                    value={item}
+                                                    disabled={
+                                                        selectedCVE
+                                                            ? item !==
+                                                              selectedCVE
+                                                            : cveData
+                                                                  .filter(
+                                                                      (
+                                                                          single
+                                                                      ) =>
+                                                                          single.CVEID ===
+                                                                          item
+                                                                  )[0]
+                                                                  .phoneModels.some(
+                                                                      (e) =>
+                                                                          e.phoneModel !==
+                                                                          selectedPhone[0]
+                                                                  )
+                                                    }
+                                                    selected={CVElist[item]}
+                                                    size="large"
+                                                    className={classes.button}
+                                                    onClick={() => {
+                                                        if (CVElist[item]) {
+                                                            setCVElist({
+                                                                ...CVElist,
+                                                                [item]: false,
+                                                            });
+                                                            setSelectedCVE(
+                                                                undefined
+                                                            );
+                                                        } else {
+                                                            setCVElist({
+                                                                ...CVElist,
+                                                                [item]: true,
+                                                            });
+                                                            setSelectedCVE(
+                                                                item
+                                                            );
+                                                        }
+                                                        // console.log(CVElist);
+                                                    }}
+                                                >
+                                                    {item}
+                                                </ToggleButton>
+                                            </Tooltip>
                                         </Grid>
                                     );
                                 })
@@ -122,5 +223,4 @@ const CenteredGrid = forwardRef(({ data }, ref) => {
         </Paper>
     );
 });
-
-export default CenteredGrid;
+export default CVETable;

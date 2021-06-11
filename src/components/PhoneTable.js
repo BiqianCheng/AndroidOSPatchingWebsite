@@ -1,10 +1,23 @@
-import React, { forwardRef, useState, useImperativeHandle } from "react";
+import React, {
+    forwardRef,
+    useState,
+    useImperativeHandle,
+    useContext,
+} from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import Pagination from "@material-ui/lab/Pagination";
-import { Button, Chip, Container, Typography } from "@material-ui/core";
-import { ToggleButton } from "@material-ui/lab";
+import {
+    Button,
+    Chip,
+    Container,
+    TextField,
+    Typography,
+} from "@material-ui/core";
+import { Autocomplete, ToggleButton } from "@material-ui/lab";
+import { getSelectedList } from "../utils/utils";
+import cveData from "../json/data.json"
 
 const useStyles = makeStyles((theme) => ({
     paper: {
@@ -39,90 +52,145 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const PhoneTable = forwardRef(({ data }, ref) => {
-    const classes = useStyles();
-    const [PhoneData, setPhoneData] = useState({
-        Sony: false,
-        Mi: false,
-        Huawei: false,
-        Oneplus: false,
-        Oppo: false,
-        Samsung: false,
-        Vivo: false,
-        Pixel: false,
-        Coolpad: false,
-    });
-
-    const [page, setPage] = useState(1);
-    useImperativeHandle(ref, () => ({
-        getPhoneData: getPhoneData,
-    }));
-
-    const getPhoneData = () => {
-        return Object.keys(PhoneData).filter((key) => PhoneData[key] === true);
-    };
-
-    return (
-        <Paper>
-            <Container maxWidth="xl">
-                <Grid container className={classes.paper} spacing={2}>
-                    <Grid item xs={12}>
-                        <Typography variant="body1" component="h6">
-                            Selected Phone Models:
-                        </Typography>
+const PhoneTable = forwardRef(
+    ({phoneList, setPhoneList, selectedCVE }) => {
+        const classes = useStyles();
+        const [page, setPage] = useState(1);
+        const [selectedPhone, setSelectedPhone] = useState(undefined);
+        const [searchInput, setSearchInput] = useState();
+        const [searchValue, setSearchValue] = useState();
+        return (
+            <Paper>
+                <Container maxWidth="xl">
+                    <Grid container className={classes.paper} spacing={2}>
+                        <Grid item xs={12}>
+                            <Autocomplete
+                                id="search-phone-autocomplete"
+                                options={Object.keys(phoneList)}
+                                getOptionDisabled={(option) =>
+                                    selectedPhone
+                                        ? option !== selectedPhone
+                                        : {
+                                            
+                                        }
+                                }
+                                style={{ width: 300 }}
+                                value={searchValue}
+                                onChange={(event, newValue) => {
+                                    if (newValue) {
+                                        if (newValue !== selectedPhone) {
+                                            if (phoneList[newValue]) {
+                                                setPhoneList({
+                                                    ...phoneList,
+                                                    [newValue]: false,
+                                                });
+                                                setSelectedPhone(undefined);
+                                            } else {
+                                                setPhoneList({
+                                                    ...phoneList,
+                                                    [newValue]: true,
+                                                });
+                                                setSelectedPhone(newValue);
+                                            }
+                                        }
+                                    } else {
+                                        setPhoneList({
+                                            ...phoneList,
+                                            [searchValue]: false,
+                                        });
+                                        setSelectedPhone(undefined);
+                                    }
+                                    setSearchValue(newValue);
+                                }}
+                                inputValue={searchInput}
+                                onInputChange={(event, newInputValue) => {
+                                    setSearchInput(newInputValue);
+                                }}
+                                renderInput={(params) => (
+                                    <TextField
+                                        {...params}
+                                        placeholder="Search Phone"
+                                        variant="outlined"
+                                    />
+                                )}
+                            />
+                        </Grid>
+                        <Grid item xs={12}>
+                            <Typography variant="body1" component="h6">
+                                Selected Phone Models:
+                            </Typography>
+                        </Grid>
+                        <Grid item xs={12}>
+                            {getSelectedList(phoneList).map((item) => (
+                                <Chip className={classes.chips} label={item} />
+                            ))}
+                        </Grid>
+                        <Grid item container spacing={2} xs={12}>
+                            {phoneList ? (
+                                Object.keys(phoneList)
+                                    .slice((page - 1) * 8, page * 8)
+                                    .map((item, index) => {
+                                        return (
+                                            <Grid item xs={6}>
+                                                <ToggleButton
+                                                    value={item}
+                                                    disabled={
+                                                        selectedPhone
+                                                            ? item !==
+                                                              selectedPhone
+                                                            : false
+                                                    }
+                                                    selected={phoneList[item]}
+                                                    size="large"
+                                                    className={classes.button}
+                                                    onClick={() => {
+                                                        if (phoneList[item]) {
+                                                            setPhoneList({
+                                                                ...phoneList,
+                                                                [item]: false,
+                                                            });
+                                                            setSelectedPhone(
+                                                                undefined
+                                                            );
+                                                        } else {
+                                                            setPhoneList({
+                                                                ...phoneList,
+                                                                [item]: true,
+                                                            });
+                                                            setSelectedPhone(
+                                                                item
+                                                            );
+                                                        }
+                                                        // console.log(phoneList);
+                                                    }}
+                                                >
+                                                    {item}
+                                                </ToggleButton>
+                                            </Grid>
+                                        );
+                                    })
+                            ) : (
+                                <></>
+                            )}
+                        </Grid>
                     </Grid>
-                    <Grid item xs={12}>
-                        {getPhoneData().map((item) => (
-                            <Chip className={classes.chips} label={item} />
-                        ))}
-                    </Grid>
-                    <Grid item container spacing={2} xs={12}>
-                        {PhoneData ? (
-                            Object.keys(PhoneData)
-                                .slice((page - 1) * 8, page * 8)
-                                .map((item, index) => {
-                                    return (
-                                        <Grid item xs={6}>
-                                            <ToggleButton
-                                                value={item}
-                                                selected={PhoneData[item]}
-                                                size="large"
-                                                className={classes.button}
-                                                onClick={() => {
-                                                    setPhoneData({
-                                                        ...PhoneData,
-                                                        [item]: !PhoneData[
-                                                            item
-                                                        ],
-                                                    });
-                                                }}
-                                            >
-                                                {item}
-                                            </ToggleButton>
-                                        </Grid>
-                                    );
-                                })
-                        ) : (
-                            <></>
-                        )}
-                    </Grid>
-                </Grid>
-                <Pagination
-                    className={classes.pagination}
-                    count={
-                        PhoneData
-                            ? Math.ceil(Object.keys(PhoneData).length / 8)
-                            : 1
-                    }
-                    page={page}
-                    onChange={(e, v) => {
-                        setPage(v);
-                    }}
-                    color="primary"
-                />
-            </Container>
-        </Paper>
-    );
-});
+                    <Pagination
+                        className={classes.pagination}
+                        count={
+                            phoneList
+                                ? Math.ceil(Object.keys(phoneList).length / 8)
+                                : 1
+                        }
+                        page={page}
+                        onChange={(e, v) => {
+                            setPage(v);
+                        }}
+                        color="primary"
+                    />
+                </Container>
+            </Paper>
+        );
+    }
+);
 
 export default PhoneTable;

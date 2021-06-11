@@ -1,4 +1,37 @@
-# Getting Started with Create React App
+# Introduction
+
+<!-- This project is a website for users who would like to che -->
+
+It is written in JavaScript.
+
+## On this website, users can do:
+
+* Choose one CVE from the CVE table on the left
+* Choose one phone model from the phone models table on the right
+* Click "Generate" button, a corresponding figure is generated based on the choices above.
+* Users are able to check each patched date for all CVEs by hovering the curser on each button.
+* Users are able to download the image for any further usages.
+
+# Implementations
+
+Implementations of each functionality are explained explicitly and shown as comments in each file.
+
+### Additional Information:
+* src/
+    
+    * App.js: Basic structure of the website
+    * components/
+        
+        * **CVETable.js**: It stores all CVEs data as a dataset
+        * **PhoneTable.js**: It stores all phone models data as a dataset
+        * **PhoneTimeline.js**: Implementations of the figure in the middle based on choices from CVE table and Phone model table.
+    * utils/
+
+        * The datalist contain a list of CVE or Phone Model with attribute of false. Once user select a CVE or Phone Model, the attribute will be set as true. Return the CVE or the Phone Model that is selected. In other word, the specific CVE or Phone Model that has true attribute.
+
+Other files that are not mentioned above should not be changed.
+
+# How to open live web page in local
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -18,6 +51,10 @@ You will also see any lint errors in the console.
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+# How to deploy production build
+
+## Available Scripts
 
 ### `npm run build`
 
@@ -39,32 +76,3 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
