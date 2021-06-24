@@ -3,15 +3,9 @@ import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import Pagination from "@material-ui/lab/Pagination";
-import {
-    Chip,
-    Container,
-    TextField,
-    Tooltip,
-    Typography,
-} from "@material-ui/core";
+import { Chip, Container, TextField, Tooltip, Typography } from "@material-ui/core";
 import { Autocomplete, ToggleButton } from "@material-ui/lab";
-import { getSelectedList } from "../utils/utils";
+import { getPhoneModelByCVE, getSelectedList } from "../utils/utils";
 import cveData from "../json/data.json";
 
 const useStyles = makeStyles((theme) => ({
@@ -68,10 +62,7 @@ const CVETable = forwardRef(({ CVElist, setCVElist, selectedPhone }) => {
                                 selectedCVE
                                     ? option !== selectedCVE
                                     : cveData.filter((item) => {
-                                          item.phoneModels.some(
-                                              (e) =>
-                                                  e.phoneModel === selectedPhone
-                                          );
+                                          item.phoneModels.some((e) => e.phoneModel === selectedPhone);
                                       })
                             }
                             style={{ width: 300 }}
@@ -106,13 +97,7 @@ const CVETable = forwardRef(({ CVElist, setCVElist, selectedPhone }) => {
                             onInputChange={(event, newInputValue) => {
                                 setSearchInput(newInputValue);
                             }}
-                            renderInput={(params) => (
-                                <TextField
-                                    {...params}
-                                    placeholder="Search CVE"
-                                    variant="outlined"
-                                />
-                            )}
+                            renderInput={(params) => <TextField {...params} placeholder="Search CVE" variant="outlined" />}
                         />
                     </Grid>
                     <Grid item xs={12}>
@@ -137,17 +122,9 @@ const CVETable = forwardRef(({ CVElist, setCVElist, selectedPhone }) => {
                                                 placement="right-start"
                                                 title={
                                                     <React.Fragment>
-                                                        <Typography variant="body2">
-                                                            Patch Date:
-                                                        </Typography>
+                                                        <Typography variant="body2">Patch Date:</Typography>
                                                         <Typography variant="body1">
-                                                            {
-                                                                cveData.filter(
-                                                                    (single) =>
-                                                                        single.CVEID ===
-                                                                        item
-                                                                )[0].startdate
-                                                            }
+                                                            {cveData.filter((single) => single.CVEID === item)[0].startdate}
                                                         </Typography>
                                                     </React.Fragment>
                                                 }
@@ -155,22 +132,7 @@ const CVETable = forwardRef(({ CVElist, setCVElist, selectedPhone }) => {
                                                 <ToggleButton
                                                     value={item}
                                                     disabled={
-                                                        selectedCVE
-                                                            ? item !==
-                                                              selectedCVE
-                                                            : cveData
-                                                                  .filter(
-                                                                      (
-                                                                          single
-                                                                      ) =>
-                                                                          single.CVEID ===
-                                                                          item
-                                                                  )[0]
-                                                                  .phoneModels.some(
-                                                                      (e) =>
-                                                                          e.phoneModel !==
-                                                                          selectedPhone[0]
-                                                                  )
+                                                        selectedCVE ? item !== selectedCVE : !getPhoneModelByCVE(item).includes(selectedPhone[0])
                                                     }
                                                     selected={CVElist[item]}
                                                     size="large"
@@ -181,17 +143,13 @@ const CVETable = forwardRef(({ CVElist, setCVElist, selectedPhone }) => {
                                                                 ...CVElist,
                                                                 [item]: false,
                                                             });
-                                                            setSelectedCVE(
-                                                                undefined
-                                                            );
+                                                            setSelectedCVE(undefined);
                                                         } else {
                                                             setCVElist({
                                                                 ...CVElist,
                                                                 [item]: true,
                                                             });
-                                                            setSelectedCVE(
-                                                                item
-                                                            );
+                                                            setSelectedCVE(item);
                                                         }
                                                         // console.log(CVElist);
                                                     }}
@@ -210,9 +168,7 @@ const CVETable = forwardRef(({ CVElist, setCVElist, selectedPhone }) => {
                 <Pagination
                     size="small"
                     className={classes.pagination}
-                    count={
-                        CVElist ? Math.ceil(Object.keys(CVElist).length / 8) : 1
-                    }
+                    count={CVElist ? Math.ceil(Object.keys(CVElist).length / 8) : 1}
                     page={page}
                     onChange={(e, v) => {
                         setPage(v);

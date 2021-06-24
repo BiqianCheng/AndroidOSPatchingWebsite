@@ -1,31 +1,21 @@
 import React from "react";
 import $ from "jquery";
-import "jq-timeline/dist/jquery.timeline.min.js";
+import "jq-timeline/dist/jquery.timeline.js";
 import "jq-timeline/dist/jquery.timeline.min.css";
 import { Button } from "@material-ui/core";
+import { convertDataPoint } from "../utils/utils";
 import jsonData from "../json/data.json";
 import config from "../json/config.json";
-
-String.prototype.hashCode = function () {
-    var hash = 0,
-        i,
-        chr;
-    if (this.length === 0) return hash;
-    for (i = 0; i < this.length; i++) {
-        chr = this.charCodeAt(i);
-        hash = (hash << 5) - hash + chr;
-        hash |= 0; // Convert to 32bit integer
-    }
-    return Math.abs(hash);
-};
 
 class PhoneTimeline extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             Loaded: false,
+            minimumDate: "",
+            maximumDate: "",
             eventData: [],
-            phoneList: config.data,
+            phoneList: [],
         };
     }
 
@@ -52,91 +42,44 @@ class PhoneTimeline extends React.Component {
         // this.getMaxDate = this.getMaxDate.bind(this);
     }
 
-    convertDataPoint(cveData, reloadFlag) {
-        console.log(cveData);
-        var resultData = jsonData.filter((item) =>
-            cveData.includes(item.CVEID)
-        );
-        console.log(resultData);
-
-        var resultEventData = resultData
-            .map((item) => {
-                console.log(this.props.selectedPhone);
-                console.log(item);
-                return item.phoneModels
-                    .filter((item) =>
-                        item.phoneModel.includes(this.props.selectedPhone)
-                    )[0]
-                    .patchdates.map((dates, i) => {
-                        // console.log(this.state.phoneList);
-                        // this.setState({
-                        //     phoneList: [...this.state.phoneList, dates[0]],
-                        // });
-                        // console.log(String(item.CVEID.concat(dates[0])).hashCode(), i);
-                        if (dates[1] === "notpatched" || dates[1] === "None") {
-                            return;
-                        }
-                        if (i === 0) {
-                            console.log(item.CVEID.concat(dates[0]));
-                            return {
-                                eventId: String(
-                                    item.CVEID.concat(dates[0])
-                                ).hashCode(),
-                                row: this.state.phoneList.indexOf(dates[0]) + 1,
-                                start: new Date(dates[1]),
-                                type: "point",
-                                content: item.CVEID,
-                            };
-                        } else {
-                            console.log(
-                                item.CVEID.concat(
-                                    item.phoneModels.find((item) =>
-                                        item.phoneModel.includes(
-                                            this.props.selectedPhone
-                                        )
-                                    ).patchdates[i - 1][0]
-                                )
-                            );
-                            return {
-                                eventId: String(
-                                    item.CVEID.concat(dates[0])
-                                ).hashCode(),
-                                row: this.state.phoneList.indexOf(dates[0]) + 1,
-                                start: new Date(dates[1]),
-                                type: "point",
-                                relation: {
-                                    before: String(
-                                        item.CVEID.concat(
-                                            item.phoneModels.find((item) =>
-                                                item.phoneModel.includes(
-                                                    this.props.selectedPhone
-                                                )
-                                            ).patchdates[i - 1][0]
-                                        )
-                                    ).hashCode(),
-                                    curve: true,
-                                },
-                                content: item.CVEID,
-                            };
-                        }
-                    });
-            })
-            .flat(1)
-            .filter((item) => item !== undefined);
-
-        console.log(resultEventData);
-
+    displayTimeline(reloadFlag = false) {
+        const { minDate, maxDate, sideLists, dataPoints } = convertDataPoint(this.props.selectedCVE, this.props.selectedPhone);
         this.setState(
             {
-                eventData: resultEventData,
+                minimumDate: minDate,
+                maximumDate: maxDate,
+                phoneList: sideLists,
+                eventData: dataPoints,
             },
             () => {
-                this.generateTimeline();
+                console.log(this.state.minimumDate, this.state.maximumDate, this.state.phoneList, this.state.eventData);
+                if (reloadFlag) {
+                    this.reload({
+                        // start <a href="https://www.jqueryscript.net/time-clock/">date</a> time
+                        startDatetime: this.state.minimumDate,
+
+                        // end date time
+                        endDatetime: this.state.maximumDate,
+
+                        // displays sidebar
+                        sidebar: {
+                            sticky: true,
+                            overlay: false,
+                            list: this.state.phoneList, //  an array of items
+                        },
+
+                        // event data
+                        eventData: this.state.eventData,
+                        reloadCacheKeep: true
+                    });
+                } else {
+                    this.generateTimeline(this.state.minimumDate, this.state.maximumDate, this.state.phoneList, this.state.eventData);
+                }
             }
         );
     }
 
-    generateTimeline() {
+    generateTimeline(start, end, sidebarList, data) {
         this.$el.Timeline({
             // "bar" or "point"
             type: "mixed",
@@ -145,10 +88,10 @@ class PhoneTimeline extends React.Component {
             scale: "months",
 
             // start <a href="https://www.jqueryscript.net/time-clock/">date</a> time
-            startDatetime: this.addMonths(this.getMinDate(), -2),
+            startDatetime: start,
 
             // end date time
-            endDatetime: this.addMonths(this.getMaxDate(), 2),
+            endDatetime: end,
 
             // displays headline
             headline: {
@@ -163,7 +106,7 @@ class PhoneTimeline extends React.Component {
             sidebar: {
                 sticky: true,
                 overlay: false,
-                list: this.state.phoneList, //  an array of items
+                list: sidebarList, //  an array of items
             },
 
             // displays ruler
@@ -202,7 +145,7 @@ class PhoneTimeline extends React.Component {
             },
 
             // event data
-            eventData: this.state.eventData,
+            eventData: data,
 
             // enables/disables effects
             effects: {
@@ -245,7 +188,7 @@ class PhoneTimeline extends React.Component {
             marginHeight: 2,
 
             // "left", "center", "right", "current", "latest" or specific event id
-            rangeAlign: "latest",
+            rangeAlign: "center",
 
             // "default", false and selector
             loader: "default",
@@ -287,21 +230,17 @@ class PhoneTimeline extends React.Component {
     }
 
     getMinDate() {
-        return new Date(
-            Math.min(...this.state.eventData.map((e) => new Date(e.start)))
-        );
+        return new Date(Math.min(...this.state.eventData.map((e) => new Date(e.start))));
     }
 
     getMaxDate() {
-        return new Date(
-            Math.max(...this.state.eventData.map((e) => new Date(e.start)))
-        );
+        return new Date(Math.max(...this.state.eventData.map((e) => new Date(e.start))));
     }
 
     // Helper function to get date and add months
     addMonths(date, months) {
         var d = date.getDate();
-        date.setMonth(date.getMonth() + +months);
+        date.setMonth(date.getMonth() + months);
         if (date.getDate() !== d) {
             date.setDate(0);
         }
@@ -338,7 +277,11 @@ class PhoneTimeline extends React.Component {
     }
 
     reload(options, callback = null, userdata = null) {
-        this.$el.Timeline("reload", options, callback, userdata);
+        this.$el.Timeline("reload", {reloadCacheKeep: false}, ()=>{
+            this.$el.Timeline("reload",options,()=>{
+                console.log(arguments)
+            })
+        }, userdata);
     }
 
     removeEvent(condition, callback = null, userdata = null) {
@@ -369,7 +312,7 @@ class PhoneTimeline extends React.Component {
                     <Button
                         variant="contained"
                         onClick={() => {
-                            this.convertDataPoint(this.props.selectedCVE);
+                            this.displayTimeline();
 
                             this.setState({ Loaded: true });
                         }}
@@ -397,15 +340,16 @@ class PhoneTimeline extends React.Component {
                         >
                             Hide
                         </Button>
-                        {/* <Button
+                        <Button
                             variant="contained"
                             onClick={() => {
-                                this.destroy();
-                                this.convertDataPoint(this.props.selectedCVE);
+                                this.displayTimeline(true);
+
+                                this.setState({ Loaded: true });
                             }}
                         >
-                            Regenerate
-                        </Button> */}
+                            Reload
+                        </Button>
                     </React.Fragment>
                 ) : (
                     <></>

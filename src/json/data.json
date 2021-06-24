@@ -1,0 +1,4462 @@
+[
+    {
+        "startdate": "2016-11-20",
+        "CVEID": "CVE-2017-0610",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2016-12-20"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-01-10"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2017-06-08"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2017-08-13",
+        "CVEID": "CVE-2017-15829",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2017-09-12"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-10-04"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2018-01-18"
+                    ]
+                ]
+            },
+            {
+                "phoneModel": "samsungS8",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2017-09-12"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-10-04"
+                    ],
+                    [
+                        "samsungS8",
+                        "2018-02-22"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2017-02-08",
+        "CVEID": "CVE-2017-8236",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2017-03-10"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-03-28"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2017-06-08"
+                    ]
+                ]
+            },
+            {
+                "phoneModel": "samsungS8",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2017-03-10"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-03-28"
+                    ],
+                    [
+                        "samsungS8",
+                        "2017-09-25"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2018-06-09",
+        "CVEID": "CVE-2018-9516",
+        "phoneModels": [
+            {
+                "phoneModel": "samsungS8",
+                "patchdates": [
+                    [
+                        "Linuxmainline",
+                        "2018-07-09"
+                    ],
+                    [
+                        "linux-4.4",
+                        "2018-07-11"
+                    ],
+                    [
+                        "android-4.4",
+                        "2018-07-11"
+                    ],
+                    [
+                        "Qualcomm mainline",
+                        "2018-07-20"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "notpatched"
+                    ],
+                    [
+                        "samsungS8",
+                        "2019-03-22"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2017-09-05",
+        "CVEID": "CVE-2017-15820",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2017-10-05"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-11-03"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2018-01-18"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2018-10-16",
+        "CVEID": "CVE-2018-13917",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2018-11-15"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "notpatched"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2019-03-21"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2017-01-27",
+        "CVEID": "CVE-2017-7364",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2017-02-26"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-03-15"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2017-06-08"
+                    ]
+                ]
+            },
+            {
+                "phoneModel": "samsungS8",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2017-02-26"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-03-15"
+                    ],
+                    [
+                        "samsungS8",
+                        "2017-06-23"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2017-02-07",
+        "CVEID": "CVE-2017-9719",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2017-03-09"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-04-11"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2017-06-08"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2017-01-27",
+        "CVEID": "CVE-2017-7368",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2017-02-26"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-03-15"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2017-06-08"
+                    ]
+                ]
+            },
+            {
+                "phoneModel": "samsungS8",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2017-02-26"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-03-15"
+                    ],
+                    [
+                        "samsungS8",
+                        "2017-06-23"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2017-09-18",
+        "CVEID": "CVE-2018-5846",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2017-10-18"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-12-01"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2019-05-09"
+                    ]
+                ]
+            },
+            {
+                "phoneModel": "samsungS8",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2017-10-18"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-12-01"
+                    ],
+                    [
+                        "samsungS8",
+                        "2019-03-22"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2017-09-03",
+        "CVEID": "CVE-2017-16534",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Linuxmainline",
+                        "2017-10-03"
+                    ],
+                    [
+                        "linux-4.4",
+                        "2017-10-12"
+                    ],
+                    [
+                        "android-4.4",
+                        "2017-10-12"
+                    ],
+                    [
+                        "Qualcomm mainline",
+                        "2017-10-25"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "notpatched"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2019-05-09"
+                    ]
+                ]
+            },
+            {
+                "phoneModel": "samsungS8",
+                "patchdates": [
+                    [
+                        "Linuxmainline",
+                        "2017-10-03"
+                    ],
+                    [
+                        "linux-4.4",
+                        "2017-10-12"
+                    ],
+                    [
+                        "android-4.4",
+                        "2017-10-12"
+                    ],
+                    [
+                        "Qualcomm mainline",
+                        "2017-10-25"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "notpatched"
+                    ],
+                    [
+                        "samsungS8",
+                        "2019-03-22"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2016-10-22",
+        "CVEID": "CVE-2016-10200",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Linuxmainline",
+                        "2016-11-21"
+                    ],
+                    [
+                        "linux-4.4",
+                        "2016-12-10"
+                    ],
+                    [
+                        "android-4.4",
+                        "2017-01-13"
+                    ],
+                    [
+                        "Qualcomm mainline",
+                        "2017-03-03"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-03-28"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2017-05-04"
+                    ]
+                ]
+            },
+            {
+                "phoneModel": "samsungS8",
+                "patchdates": [
+                    [
+                        "Linuxmainline",
+                        "2016-11-21"
+                    ],
+                    [
+                        "linux-4.4",
+                        "2016-12-10"
+                    ],
+                    [
+                        "android-4.4",
+                        "2017-01-13"
+                    ],
+                    [
+                        "Qualcomm mainline",
+                        "2017-03-03"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-03-28"
+                    ],
+                    [
+                        "samsungS8",
+                        "2018-04-11"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2017-09-12",
+        "CVEID": "CVE-2017-16533",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Linuxmainline",
+                        "2017-10-12"
+                    ],
+                    [
+                        "linux-4.4",
+                        "2017-10-18"
+                    ],
+                    [
+                        "android-4.4",
+                        "2017-10-19"
+                    ],
+                    [
+                        "Qualcomm mainline",
+                        "2017-10-26"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2018-04-10"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2018-04-12"
+                    ]
+                ]
+            },
+            {
+                "phoneModel": "samsungS8",
+                "patchdates": [
+                    [
+                        "Linuxmainline",
+                        "2017-10-12"
+                    ],
+                    [
+                        "linux-4.4",
+                        "2017-10-18"
+                    ],
+                    [
+                        "android-4.4",
+                        "2017-10-19"
+                    ],
+                    [
+                        "Qualcomm mainline",
+                        "2017-10-26"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2018-04-10"
+                    ],
+                    [
+                        "samsungS8",
+                        "2018-04-11"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2018-07-21",
+        "CVEID": "CVE-2018-11817",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2018-08-20"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "notpatched"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2019-05-09"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2017-04-10",
+        "CVEID": "CVE-2017-8281",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2017-05-10"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-08-16"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2017-11-02"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2017-09-05",
+        "CVEID": "CVE-2018-9568",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Linuxmainline",
+                        "2017-10-05"
+                    ],
+                    [
+                        "linux-4.4",
+                        "2017-10-21"
+                    ],
+                    [
+                        "android-4.4",
+                        "2017-10-22"
+                    ],
+                    [
+                        "Qualcomm mainline",
+                        "2017-11-03"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "notpatched"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2018-12-27"
+                    ]
+                ]
+            },
+            {
+                "phoneModel": "samsungS8",
+                "patchdates": [
+                    [
+                        "Linuxmainline",
+                        "2017-10-05"
+                    ],
+                    [
+                        "linux-4.4",
+                        "2017-10-21"
+                    ],
+                    [
+                        "android-4.4",
+                        "2017-10-22"
+                    ],
+                    [
+                        "Qualcomm mainline",
+                        "2017-11-03"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "notpatched"
+                    ],
+                    [
+                        "samsungS8",
+                        "2018-11-21"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2017-08-23",
+        "CVEID": "CVE-2017-15826",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2017-09-22"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-10-04"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2018-01-18"
+                    ]
+                ]
+            },
+            {
+                "phoneModel": "samsungS8",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2017-09-22"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-10-04"
+                    ],
+                    [
+                        "samsungS8",
+                        "2017-12-27"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2017-08-09",
+        "CVEID": "CVE-2018-10876",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Linuxmainline",
+                        "2018-07-08"
+                    ],
+                    [
+                        "linux-4.4",
+                        "2018-07-11"
+                    ],
+                    [
+                        "android-4.4",
+                        "2018-07-11"
+                    ],
+                    [
+                        "Qualcomm mainline",
+                        "2018-07-20"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "notpatched"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2017-09-08"
+                    ]
+                ]
+            },
+            {
+                "phoneModel": "samsungS8",
+                "patchdates": [
+                    [
+                        "Linuxmainline",
+                        "2018-07-08"
+                    ],
+                    [
+                        "linux-4.4",
+                        "2018-07-11"
+                    ],
+                    [
+                        "android-4.4",
+                        "2018-07-11"
+                    ],
+                    [
+                        "Qualcomm mainline",
+                        "2018-07-20"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "notpatched"
+                    ],
+                    [
+                        "samsungS8",
+                        "2019-03-22"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2017-01-03",
+        "CVEID": "CVE-2016-10289",
+        "phoneModels": [
+            {
+                "phoneModel": "samsungS8",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2017-02-02"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-02-12"
+                    ],
+                    [
+                        "samsungS8",
+                        "2017-09-25"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2017-01-31",
+        "CVEID": "CVE-2016-10285",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2017-03-02"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-03-15"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2017-06-08"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2018-01-20",
+        "CVEID": "CVE-2018-5831",
+        "phoneModels": [
+            {
+                "phoneModel": "samsungS8",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2018-02-19"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2018-03-07"
+                    ],
+                    [
+                        "samsungS8",
+                        "2018-05-04"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2017-01-09",
+        "CVEID": "CVE-2017-0465",
+        "phoneModels": [
+            {
+                "phoneModel": "samsungS8",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2017-02-08"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-02-21"
+                    ],
+                    [
+                        "samsungS8",
+                        "2017-06-23"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2017-06-08",
+        "CVEID": "CVE-2017-7533",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Linuxmainline",
+                        "2017-07-08"
+                    ],
+                    [
+                        "linux-4.4",
+                        "2017-08-06"
+                    ],
+                    [
+                        "android-4.4",
+                        "2017-08-07"
+                    ],
+                    [
+                        "Qualcomm mainline",
+                        "notpatched"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "notpatched"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2019-05-09"
+                    ]
+                ]
+            },
+            {
+                "phoneModel": "samsungS8",
+                "patchdates": [
+                    [
+                        "Linuxmainline",
+                        "2017-07-08"
+                    ],
+                    [
+                        "linux-4.4",
+                        "2017-08-06"
+                    ],
+                    [
+                        "android-4.4",
+                        "2017-08-07"
+                    ],
+                    [
+                        "Qualcomm mainline",
+                        "notpatched"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "notpatched"
+                    ],
+                    [
+                        "samsungS8",
+                        "2017-09-25"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2017-09-18",
+        "CVEID": "CVE-2017-15834",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2017-10-18"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-11-03"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2018-01-18"
+                    ]
+                ]
+            },
+            {
+                "phoneModel": "samsungS8",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2017-10-18"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-11-03"
+                    ],
+                    [
+                        "samsungS8",
+                        "2018-02-22"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2017-03-21",
+        "CVEID": "CVE-2017-11028",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2017-04-20"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-05-09"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2018-01-18"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2017-04-03",
+        "CVEID": "CVE-2017-11029",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2017-05-03"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-05-22"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2018-01-18"
+                    ]
+                ]
+            },
+            {
+                "phoneModel": "samsungS8",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2017-05-03"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-05-22"
+                    ],
+                    [
+                        "samsungS8",
+                        "2018-04-11"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2016-12-04",
+        "CVEID": "CVE-2017-7373",
+        "phoneModels": [
+            {
+                "phoneModel": "samsungS8",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2017-01-03"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-01-10"
+                    ],
+                    [
+                        "samsungS8",
+                        "2017-08-16"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2017-02-19",
+        "CVEID": "CVE-2017-7370",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2017-03-21"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-03-28"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2017-06-08"
+                    ]
+                ]
+            },
+            {
+                "phoneModel": "samsungS8",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2017-03-21"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-03-28"
+                    ],
+                    [
+                        "samsungS8",
+                        "2017-08-16"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2017-05-19",
+        "CVEID": "CVE-2017-9722",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2017-06-18"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-07-02"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2018-01-18"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2017-03-13",
+        "CVEID": "CVE-2017-11025",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2017-04-12"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-04-24"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2017-06-08"
+                    ]
+                ]
+            },
+            {
+                "phoneModel": "samsungS8",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2017-04-12"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-04-24"
+                    ],
+                    [
+                        "samsungS8",
+                        "2017-09-25"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2017-12-18",
+        "CVEID": "CVE-2018-6927",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Linuxmainline",
+                        "2018-01-17"
+                    ],
+                    [
+                        "linux-4.4",
+                        "2018-01-23"
+                    ],
+                    [
+                        "android-4.4",
+                        "2018-01-23"
+                    ],
+                    [
+                        "Qualcomm mainline",
+                        "2018-02-01"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "notpatched"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2018-10-25"
+                    ]
+                ]
+            },
+            {
+                "phoneModel": "samsungS8",
+                "patchdates": [
+                    [
+                        "Linuxmainline",
+                        "2018-01-17"
+                    ],
+                    [
+                        "linux-4.4",
+                        "2018-01-23"
+                    ],
+                    [
+                        "android-4.4",
+                        "2018-01-23"
+                    ],
+                    [
+                        "Qualcomm mainline",
+                        "2018-02-01"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "notpatched"
+                    ],
+                    [
+                        "samsungS8",
+                        "2018-08-01"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2016-10-26",
+        "CVEID": "CVE-2016-8414",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2016-11-25"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2016-11-25"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2017-06-29"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2017-06-05",
+        "CVEID": "CVE-2017-11023",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2017-07-05"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-07-16"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2018-01-18"
+                    ]
+                ]
+            },
+            {
+                "phoneModel": "samsungS8",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2017-07-05"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-07-16"
+                    ],
+                    [
+                        "samsungS8",
+                        "2017-09-25"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2017-08-16",
+        "CVEID": "CVE-2017-14891",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2017-09-15"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-10-04"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2019-05-09"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2017-08-23",
+        "CVEID": "CVE-2017-14892",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2017-09-22"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-10-04"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2018-01-18"
+                    ]
+                ]
+            },
+            {
+                "phoneModel": "samsungS8",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2017-09-22"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-10-04"
+                    ],
+                    [
+                        "samsungS8",
+                        "2017-12-27"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2017-01-17",
+        "CVEID": "CVE-2016-10290",
+        "phoneModels": [
+            {
+                "phoneModel": "samsungS8",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2017-02-16"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-02-24"
+                    ],
+                    [
+                        "samsungS8",
+                        "2017-09-25"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2017-01-17",
+        "CVEID": "CVE-2016-10296",
+        "phoneModels": [
+            {
+                "phoneModel": "samsungS8",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2017-02-16"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-02-24"
+                    ],
+                    [
+                        "samsungS8",
+                        "2017-09-25"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2017-05-13",
+        "CVEID": "CVE-2017-14897",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2017-06-12"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-09-04"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2018-01-18"
+                    ]
+                ]
+            },
+            {
+                "phoneModel": "samsungS8",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2017-06-12"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-09-04"
+                    ],
+                    [
+                        "samsungS8",
+                        "2017-11-22"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2017-05-24",
+        "CVEID": "CVE-2017-11031",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2017-06-23"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-07-02"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2018-01-18"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2017-05-19",
+        "CVEID": "CVE-2017-11030",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2017-06-18"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-07-02"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2018-01-18"
+                    ]
+                ]
+            },
+            {
+                "phoneModel": "samsungS8",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2017-06-18"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-07-02"
+                    ],
+                    [
+                        "samsungS8",
+                        "2017-10-24"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2017-11-21",
+        "CVEID": "CVE-2017-15129",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Linuxmainline",
+                        "2017-12-21"
+                    ],
+                    [
+                        "linux-4.4",
+                        "2018-01-02"
+                    ],
+                    [
+                        "android-4.4",
+                        "2018-01-02"
+                    ],
+                    [
+                        "Qualcomm mainline",
+                        "2018-01-19"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "notpatched"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2019-05-09"
+                    ]
+                ]
+            },
+            {
+                "phoneModel": "samsungS8",
+                "patchdates": [
+                    [
+                        "Linuxmainline",
+                        "2017-12-21"
+                    ],
+                    [
+                        "linux-4.4",
+                        "2018-01-02"
+                    ],
+                    [
+                        "android-4.4",
+                        "2018-01-02"
+                    ],
+                    [
+                        "Qualcomm mainline",
+                        "2018-01-19"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "notpatched"
+                    ],
+                    [
+                        "samsungS8",
+                        "2018-08-01"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2017-04-30",
+        "CVEID": "CVE-2018-3599",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2017-05-30"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-12-01"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2018-01-18"
+                    ]
+                ]
+            },
+            {
+                "phoneModel": "samsungS8",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2017-05-30"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-12-01"
+                    ],
+                    [
+                        "samsungS8",
+                        "2018-04-11"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2018-01-09",
+        "CVEID": "CVE-2018-3597",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2018-02-08"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2018-03-07"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2019-05-09"
+                    ]
+                ]
+            },
+            {
+                "phoneModel": "samsungS8",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2018-02-08"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2018-03-07"
+                    ],
+                    [
+                        "samsungS8",
+                        "2019-03-22"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2017-02-27",
+        "CVEID": "CVE-2017-7184",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Linuxmainline",
+                        "2017-03-29"
+                    ],
+                    [
+                        "linux-4.4",
+                        "2017-03-31"
+                    ],
+                    [
+                        "android-4.4",
+                        "2017-04-11"
+                    ],
+                    [
+                        "Qualcomm mainline",
+                        "2017-04-28"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-05-22"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2017-06-08"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2017-03-02",
+        "CVEID": "CVE-2017-7187",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Linuxmainline",
+                        "2017-04-01"
+                    ],
+                    [
+                        "linux-4.4",
+                        "2017-04-08"
+                    ],
+                    [
+                        "android-4.4",
+                        "2017-04-11"
+                    ],
+                    [
+                        "Qualcomm mainline",
+                        "2017-04-28"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2018-01-10"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2017-11-23"
+                    ]
+                ]
+            },
+            {
+                "phoneModel": "samsungS8",
+                "patchdates": [
+                    [
+                        "Linuxmainline",
+                        "2017-04-01"
+                    ],
+                    [
+                        "linux-4.4",
+                        "2017-04-08"
+                    ],
+                    [
+                        "android-4.4",
+                        "2017-04-11"
+                    ],
+                    [
+                        "Qualcomm mainline",
+                        "2017-04-28"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2018-01-10"
+                    ],
+                    [
+                        "samsungS8",
+                        "2017-08-16"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2016-04-19",
+        "CVEID": "CVE-2016-9794",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Linuxmainline",
+                        "2016-05-19"
+                    ],
+                    [
+                        "linux-4.4",
+                        "2016-12-08"
+                    ],
+                    [
+                        "android-4.4",
+                        "2017-02-23"
+                    ],
+                    [
+                        "Qualcomm mainline",
+                        "2017-03-03"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-05-22"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2017-06-08"
+                    ]
+                ]
+            },
+            {
+                "phoneModel": "samsungS8",
+                "patchdates": [
+                    [
+                        "Linuxmainline",
+                        "2016-05-19"
+                    ],
+                    [
+                        "linux-4.4",
+                        "2016-12-08"
+                    ],
+                    [
+                        "android-4.4",
+                        "2017-02-23"
+                    ],
+                    [
+                        "Qualcomm mainline",
+                        "2017-03-03"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-05-22"
+                    ],
+                    [
+                        "samsungS8",
+                        "2017-06-23"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2018-06-08",
+        "CVEID": "CVE-2018-10877",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Linuxmainline",
+                        "2018-07-08"
+                    ],
+                    [
+                        "linux-4.4",
+                        "2018-07-11"
+                    ],
+                    [
+                        "android-4.4",
+                        "2018-07-11"
+                    ],
+                    [
+                        "Qualcomm mainline",
+                        "2018-07-20"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "notpatched"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2019-02-15"
+                    ]
+                ]
+            },
+            {
+                "phoneModel": "samsungS8",
+                "patchdates": [
+                    [
+                        "Linuxmainline",
+                        "2018-07-08"
+                    ],
+                    [
+                        "linux-4.4",
+                        "2018-07-11"
+                    ],
+                    [
+                        "android-4.4",
+                        "2018-07-11"
+                    ],
+                    [
+                        "Qualcomm mainline",
+                        "2018-07-20"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "notpatched"
+                    ],
+                    [
+                        "samsungS8",
+                        "2019-03-22"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2016-10-26",
+        "CVEID": "CVE-2016-8650",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Linuxmainline",
+                        "2016-11-25"
+                    ],
+                    [
+                        "linux-4.4",
+                        "2016-12-02"
+                    ],
+                    [
+                        "android-4.4",
+                        "2017-02-23"
+                    ],
+                    [
+                        "Qualcomm mainline",
+                        "2017-03-03"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-03-28"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2017-05-04"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2016-11-02",
+        "CVEID": "CVE-2016-8655",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Linuxmainline",
+                        "2016-12-02"
+                    ],
+                    [
+                        "linux-4.4",
+                        "2016-12-10"
+                    ],
+                    [
+                        "android-4.4",
+                        "2017-01-13"
+                    ],
+                    [
+                        "Qualcomm mainline",
+                        "2017-03-03"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-03-28"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2017-05-04"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2017-09-04",
+        "CVEID": "CVE-2017-14880",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2017-10-05"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-10-04"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2018-01-18"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2017-03-15",
+        "CVEID": "CVE-2017-8262",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2017-04-14"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-04-24"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2017-06-08"
+                    ]
+                ]
+            },
+            {
+                "phoneModel": "samsungS8",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2017-04-14"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-04-24"
+                    ],
+                    [
+                        "samsungS8",
+                        "2017-09-25"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2017-03-21",
+        "CVEID": "CVE-2017-8266",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2017-04-20"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-05-09"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2017-06-08"
+                    ]
+                ]
+            },
+            {
+                "phoneModel": "samsungS8",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2017-04-20"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-05-09"
+                    ],
+                    [
+                        "samsungS8",
+                        "2017-06-23"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2018-10-31",
+        "CVEID": "CVE-2019-2025",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Linuxmainline",
+                        "2018-11-30"
+                    ],
+                    [
+                        "linux-4.4",
+                        "notpatched"
+                    ],
+                    [
+                        "android-4.4",
+                        "2018-12-03"
+                    ],
+                    [
+                        "Qualcomm mainline",
+                        "2018-12-18"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "notpatched"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2019-03-21"
+                    ]
+                ]
+            },
+            {
+                "phoneModel": "samsungS8",
+                "patchdates": [
+                    [
+                        "Linuxmainline",
+                        "2018-11-30"
+                    ],
+                    [
+                        "linux-4.4",
+                        "notpatched"
+                    ],
+                    [
+                        "android-4.4",
+                        "2018-12-03"
+                    ],
+                    [
+                        "Qualcomm mainline",
+                        "2018-12-18"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "notpatched"
+                    ],
+                    [
+                        "samsungS8",
+                        "2019-03-22"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2016-01-01",
+        "CVEID": "CVE-2016-0723",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Linuxmainline",
+                        "2016-01-31"
+                    ],
+                    [
+                        "linux-4.4",
+                        "2016-02-17"
+                    ],
+                    [
+                        "android-4.4",
+                        "2016-05-17"
+                    ],
+                    [
+                        "Qualcomm mainline",
+                        "2016-03-23"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2016-03-23"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2019-05-09"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2017-06-19",
+        "CVEID": "CVE-2017-14873",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2017-07-19"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-08-16"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2018-01-18"
+                    ]
+                ]
+            },
+            {
+                "phoneModel": "samsungS8",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2017-07-19"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-08-16"
+                    ],
+                    [
+                        "samsungS8",
+                        "2018-02-22"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2017-05-24",
+        "CVEID": "CVE-2017-14877",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2017-06-23"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-07-16"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2018-01-18"
+                    ]
+                ]
+            },
+            {
+                "phoneModel": "samsungS8",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2017-06-23"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-07-16"
+                    ],
+                    [
+                        "samsungS8",
+                        "2017-12-27"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2017-01-30",
+        "CVEID": "CVE-2017-17771",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2017-03-01"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-03-15"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2017-05-04"
+                    ]
+                ]
+            },
+            {
+                "phoneModel": "samsungS8",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2017-03-01"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-03-15"
+                    ],
+                    [
+                        "samsungS8",
+                        "2017-08-16"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2017-07-25",
+        "CVEID": "CVE-2018-11905",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2017-08-24"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "notpatched"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2018-01-18"
+                    ]
+                ]
+            },
+            {
+                "phoneModel": "samsungS8",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2017-08-24"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "notpatched"
+                    ],
+                    [
+                        "samsungS8",
+                        "2018-04-11"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2016-02-12",
+        "CVEID": "CVE-2018-9422",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Linuxmainline",
+                        "2016-03-14"
+                    ],
+                    [
+                        "linux-4.4",
+                        "2018-04-13"
+                    ],
+                    [
+                        "android-4.4",
+                        "2018-04-14"
+                    ],
+                    [
+                        "Qualcomm mainline",
+                        "2018-05-02"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "notpatched"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2019-05-09"
+                    ]
+                ]
+            },
+            {
+                "phoneModel": "samsungS8",
+                "patchdates": [
+                    [
+                        "Linuxmainline",
+                        "2016-03-14"
+                    ],
+                    [
+                        "linux-4.4",
+                        "2018-04-13"
+                    ],
+                    [
+                        "android-4.4",
+                        "2018-04-14"
+                    ],
+                    [
+                        "Qualcomm mainline",
+                        "2018-05-02"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "notpatched"
+                    ],
+                    [
+                        "samsungS8",
+                        "2018-08-01"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2017-10-14",
+        "CVEID": "CVE-2017-18066",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2017-11-13"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-12-01"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2018-04-12"
+                    ]
+                ]
+            },
+            {
+                "phoneModel": "samsungS8",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2017-11-13"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-12-01"
+                    ],
+                    [
+                        "samsungS8",
+                        "2018-02-22"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2017-04-05",
+        "CVEID": "CVE-2017-1000112",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Linuxmainline",
+                        "2017-08-10"
+                    ],
+                    [
+                        "linux-4.4",
+                        "2017-08-12"
+                    ],
+                    [
+                        "android-4.4",
+                        "2017-08-14"
+                    ],
+                    [
+                        "Qualcomm mainline",
+                        "2017-09-08"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "notpatched"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2017-05-05"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2018-06-05",
+        "CVEID": "CVE-2018-13405",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Linuxmainline",
+                        "2018-07-05"
+                    ],
+                    [
+                        "linux-4.4",
+                        "2018-07-17"
+                    ],
+                    [
+                        "android-4.4",
+                        "2018-07-17"
+                    ],
+                    [
+                        "Qualcomm mainline",
+                        "notpatched"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "notpatched"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2019-02-15"
+                    ]
+                ]
+            },
+            {
+                "phoneModel": "samsungS8",
+                "patchdates": [
+                    [
+                        "Linuxmainline",
+                        "2018-07-05"
+                    ],
+                    [
+                        "linux-4.4",
+                        "2018-07-17"
+                    ],
+                    [
+                        "android-4.4",
+                        "2018-07-17"
+                    ],
+                    [
+                        "Qualcomm mainline",
+                        "notpatched"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "notpatched"
+                    ],
+                    [
+                        "samsungS8",
+                        "2019-03-22"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2017-04-16",
+        "CVEID": "CVE-2017-8279",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2017-05-16"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-06-05"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2018-01-18"
+                    ]
+                ]
+            },
+            {
+                "phoneModel": "samsungS8",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2017-05-16"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-06-05"
+                    ],
+                    [
+                        "samsungS8",
+                        "2017-09-25"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2017-05-10",
+        "CVEID": "CVE-2017-1000380",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Linuxmainline",
+                        "2017-06-09"
+                    ],
+                    [
+                        "linux-4.4",
+                        "2017-06-14"
+                    ],
+                    [
+                        "android-4.4",
+                        "2017-06-14"
+                    ],
+                    [
+                        "Qualcomm mainline",
+                        "2017-06-22"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2018-02-01"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2018-01-18"
+                    ]
+                ]
+            },
+            {
+                "phoneModel": "samsungS8",
+                "patchdates": [
+                    [
+                        "Linuxmainline",
+                        "2017-06-09"
+                    ],
+                    [
+                        "linux-4.4",
+                        "2017-06-14"
+                    ],
+                    [
+                        "android-4.4",
+                        "2017-06-14"
+                    ],
+                    [
+                        "Qualcomm mainline",
+                        "2017-06-22"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2018-02-01"
+                    ],
+                    [
+                        "samsungS8",
+                        "2017-09-25"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2016-11-23",
+        "CVEID": "CVE-2016-5346",
+        "phoneModels": [
+            {
+                "phoneModel": "samsungS8",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2016-12-23"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-01-10"
+                    ],
+                    [
+                        "samsungS8",
+                        "2017-08-16"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2017-04-10",
+        "CVEID": "CVE-2017-11016",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2017-05-10"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-08-16"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2018-01-18"
+                    ]
+                ]
+            },
+            {
+                "phoneModel": "samsungS8",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2017-05-10"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-08-16"
+                    ],
+                    [
+                        "samsungS8",
+                        "2017-09-25"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2017-10-20",
+        "CVEID": "CVE-2018-3571",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2017-11-19"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-12-01"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2018-06-28"
+                    ]
+                ]
+            },
+            {
+                "phoneModel": "samsungS8",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2017-11-19"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-12-01"
+                    ],
+                    [
+                        "samsungS8",
+                        "2018-04-11"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2017-12-11",
+        "CVEID": "CVE-2018-3570",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2018-01-11"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2018-01-10"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2019-05-09"
+                    ]
+                ]
+            },
+            {
+                "phoneModel": "samsungS8",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2018-01-11"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2018-01-10"
+                    ],
+                    [
+                        "samsungS8",
+                        "2018-04-11"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2017-11-19",
+        "CVEID": "CVE-2018-3572",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2017-12-19"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2018-01-10"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2019-05-09"
+                    ]
+                ]
+            },
+            {
+                "phoneModel": "samsungS8",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2017-12-19"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2018-01-10"
+                    ],
+                    [
+                        "samsungS8",
+                        "2018-04-11"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2017-12-19",
+        "CVEID": "CVE-2014-9781",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "notpatched"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "notpatched"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2018-01-18"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2018-05-20",
+        "CVEID": "CVE-2018-11987",
+        "phoneModels": [
+            {
+                "phoneModel": "samsungS8",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2018-06-19"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "notpatched"
+                    ],
+                    [
+                        "samsungS8",
+                        "2018-11-21"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2018-03-05",
+        "CVEID": "CVE-2018-5908",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2018-04-04"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2018-04-11"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2018-10-25"
+                    ]
+                ]
+            },
+            {
+                "phoneModel": "samsungS8",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2018-04-04"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2018-04-11"
+                    ],
+                    [
+                        "samsungS8",
+                        "2018-06-20"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2018-03-04",
+        "CVEID": "CVE-2018-5909",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2018-04-03"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2018-04-10"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2018-10-25"
+                    ]
+                ]
+            },
+            {
+                "phoneModel": "samsungS8",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2018-04-03"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2018-04-10"
+                    ],
+                    [
+                        "samsungS8",
+                        "2018-06-20"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2018-02-15",
+        "CVEID": "CVE-2018-5904",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2018-03-17"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "notpatched"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2018-10-25"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2018-02-18",
+        "CVEID": "CVE-2018-5905",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2018-03-20"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2018-04-10"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2018-10-25"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2016-06-05",
+        "CVEID": "CVE-2016-5853",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2016-07-05"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2016-07-05"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2019-05-09"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2017-11-11",
+        "CVEID": "CVE-2017-17806",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Linuxmainline",
+                        "2017-12-11"
+                    ],
+                    [
+                        "linux-4.4",
+                        "2017-12-20"
+                    ],
+                    [
+                        "android-4.4",
+                        "2017-12-20"
+                    ],
+                    [
+                        "Qualcomm mainline",
+                        "2018-01-19"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "notpatched"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2018-08-02"
+                    ]
+                ]
+            },
+            {
+                "phoneModel": "samsungS8",
+                "patchdates": [
+                    [
+                        "Linuxmainline",
+                        "2017-12-11"
+                    ],
+                    [
+                        "linux-4.4",
+                        "2017-12-20"
+                    ],
+                    [
+                        "android-4.4",
+                        "2017-12-20"
+                    ],
+                    [
+                        "Qualcomm mainline",
+                        "2018-01-19"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "notpatched"
+                    ],
+                    [
+                        "samsungS8",
+                        "2018-06-20"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2017-11-09",
+        "CVEID": "CVE-2017-17807",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Linuxmainline",
+                        "2017-12-09"
+                    ],
+                    [
+                        "linux-4.4",
+                        "2017-12-20"
+                    ],
+                    [
+                        "android-4.4",
+                        "2017-12-20"
+                    ],
+                    [
+                        "Qualcomm mainline",
+                        "2018-01-19"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "notpatched"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2018-08-02"
+                    ]
+                ]
+            },
+            {
+                "phoneModel": "samsungS8",
+                "patchdates": [
+                    [
+                        "Linuxmainline",
+                        "2017-12-09"
+                    ],
+                    [
+                        "linux-4.4",
+                        "2017-12-20"
+                    ],
+                    [
+                        "android-4.4",
+                        "2017-12-20"
+                    ],
+                    [
+                        "Qualcomm mainline",
+                        "2018-01-19"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "notpatched"
+                    ],
+                    [
+                        "samsungS8",
+                        "2018-06-20"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2017-01-21",
+        "CVEID": "CVE-2017-10661",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Linuxmainline",
+                        "2017-02-20"
+                    ],
+                    [
+                        "linux-4.4",
+                        "2017-05-08"
+                    ],
+                    [
+                        "android-4.4",
+                        "2017-05-08"
+                    ],
+                    [
+                        "Qualcomm mainline",
+                        "2017-05-11"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-09-04"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2017-10-12"
+                    ]
+                ]
+            },
+            {
+                "phoneModel": "samsungS8",
+                "patchdates": [
+                    [
+                        "Linuxmainline",
+                        "2017-02-20"
+                    ],
+                    [
+                        "linux-4.4",
+                        "2017-05-08"
+                    ],
+                    [
+                        "android-4.4",
+                        "2017-05-08"
+                    ],
+                    [
+                        "Qualcomm mainline",
+                        "2017-05-11"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-09-04"
+                    ],
+                    [
+                        "samsungS8",
+                        "2017-09-25"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2017-01-08",
+        "CVEID": "CVE-2017-6214",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Linuxmainline",
+                        "2017-02-07"
+                    ],
+                    [
+                        "linux-4.4",
+                        "2017-02-18"
+                    ],
+                    [
+                        "android-4.4",
+                        "2017-03-02"
+                    ],
+                    [
+                        "Qualcomm mainline",
+                        "2017-03-25"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-10-04"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2017-11-02"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2017-12-17",
+        "CVEID": "CVE-2018-3564",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2018-01-16"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2018-02-01"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2019-05-09"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2016-12-16",
+        "CVEID": "CVE-2017-6001",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Linuxmainline",
+                        "2017-01-15"
+                    ],
+                    [
+                        "linux-4.4",
+                        "2017-04-30"
+                    ],
+                    [
+                        "android-4.4",
+                        "2017-04-30"
+                    ],
+                    [
+                        "Qualcomm mainline",
+                        "2017-05-03"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "notpatched"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2018-01-18"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2017-11-15",
+        "CVEID": "CVE-2017-17558",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Linuxmainline",
+                        "2017-12-15"
+                    ],
+                    [
+                        "linux-4.4",
+                        "2019-04-03"
+                    ],
+                    [
+                        "android-4.4",
+                        "2019-04-03"
+                    ],
+                    [
+                        "Qualcomm mainline",
+                        "2018-08-30"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "notpatched"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2018-08-02"
+                    ]
+                ]
+            },
+            {
+                "phoneModel": "samsungS8",
+                "patchdates": [
+                    [
+                        "Linuxmainline",
+                        "2017-12-15"
+                    ],
+                    [
+                        "linux-4.4",
+                        "2019-04-03"
+                    ],
+                    [
+                        "android-4.4",
+                        "2019-04-03"
+                    ],
+                    [
+                        "Qualcomm mainline",
+                        "2018-08-30"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "notpatched"
+                    ],
+                    [
+                        "samsungS8",
+                        "2018-06-20"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2018-12-07",
+        "CVEID": "CVE-2018-13899",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2019-01-06"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "notpatched"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2019-03-21"
+                    ]
+                ]
+            },
+            {
+                "phoneModel": "samsungS8",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2019-01-06"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "notpatched"
+                    ],
+                    [
+                        "samsungS8",
+                        "2019-03-22"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2017-03-06",
+        "CVEID": "CVE-2017-7308",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Linuxmainline",
+                        "2017-04-05"
+                    ],
+                    [
+                        "linux-4.4",
+                        "2017-04-18"
+                    ],
+                    [
+                        "android-4.4",
+                        "2017-04-13"
+                    ],
+                    [
+                        "Qualcomm mainline",
+                        "2017-04-28"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-07-31"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2017-06-29"
+                    ]
+                ]
+            },
+            {
+                "phoneModel": "samsungS8",
+                "patchdates": [
+                    [
+                        "Linuxmainline",
+                        "2017-04-05"
+                    ],
+                    [
+                        "linux-4.4",
+                        "2017-04-18"
+                    ],
+                    [
+                        "android-4.4",
+                        "2017-04-13"
+                    ],
+                    [
+                        "Qualcomm mainline",
+                        "2017-04-28"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-07-31"
+                    ],
+                    [
+                        "samsungS8",
+                        "2017-09-25"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2017-01-17",
+        "CVEID": "CVE-2017-6346",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Linuxmainline",
+                        "2017-02-16"
+                    ],
+                    [
+                        "linux-4.4",
+                        "2017-02-26"
+                    ],
+                    [
+                        "android-4.4",
+                        "2017-03-02"
+                    ],
+                    [
+                        "Qualcomm mainline",
+                        "2017-03-25"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-10-04"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2017-11-02"
+                    ]
+                ]
+            },
+            {
+                "phoneModel": "samsungS8",
+                "patchdates": [
+                    [
+                        "Linuxmainline",
+                        "2017-02-16"
+                    ],
+                    [
+                        "linux-4.4",
+                        "2017-02-26"
+                    ],
+                    [
+                        "android-4.4",
+                        "2017-03-02"
+                    ],
+                    [
+                        "Qualcomm mainline",
+                        "2017-03-25"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-10-04"
+                    ],
+                    [
+                        "samsungS8",
+                        "2017-09-25"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2017-06-14",
+        "CVEID": "CVE-2017-11033",
+        "phoneModels": [
+            {
+                "phoneModel": "samsungS8",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2017-07-14"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-08-16"
+                    ],
+                    [
+                        "samsungS8",
+                        "2017-09-25"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2017-08-09",
+        "CVEID": "CVE-2017-11075",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2017-09-08"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-10-04"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2018-01-18"
+                    ]
+                ]
+            },
+            {
+                "phoneModel": "samsungS8",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2017-09-08"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-10-04"
+                    ],
+                    [
+                        "samsungS8",
+                        "2018-04-11"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2016-11-13",
+        "CVEID": "CVE-2018-9384",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Linuxmainline",
+                        "2016-12-13"
+                    ],
+                    [
+                        "linux-4.4",
+                        "notpatched"
+                    ],
+                    [
+                        "android-4.4",
+                        "2017-08-09"
+                    ],
+                    [
+                        "Qualcomm mainline",
+                        "2017-09-08"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "notpatched"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2019-05-09"
+                    ]
+                ]
+            },
+            {
+                "phoneModel": "samsungS8",
+                "patchdates": [
+                    [
+                        "Linuxmainline",
+                        "2016-12-13"
+                    ],
+                    [
+                        "linux-4.4",
+                        "notpatched"
+                    ],
+                    [
+                        "android-4.4",
+                        "2017-08-09"
+                    ],
+                    [
+                        "Qualcomm mainline",
+                        "2017-09-08"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "notpatched"
+                    ],
+                    [
+                        "samsungS8",
+                        "2019-03-22"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2018-02-08",
+        "CVEID": "CVE-2018-11281",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2018-03-10"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "notpatched"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2019-03-21"
+                    ]
+                ]
+            },
+            {
+                "phoneModel": "samsungS8",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2018-03-10"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "notpatched"
+                    ],
+                    [
+                        "samsungS8",
+                        "2019-03-22"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2017-06-03",
+        "CVEID": "CVE-2017-12146",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Linuxmainline",
+                        "2017-07-03"
+                    ],
+                    [
+                        "linux-4.4",
+                        "2017-07-15"
+                    ],
+                    [
+                        "android-4.4",
+                        "2017-07-15"
+                    ],
+                    [
+                        "Qualcomm mainline",
+                        "2017-08-08"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-10-04"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2017-11-02"
+                    ]
+                ]
+            },
+            {
+                "phoneModel": "samsungS8",
+                "patchdates": [
+                    [
+                        "Linuxmainline",
+                        "2017-07-03"
+                    ],
+                    [
+                        "linux-4.4",
+                        "2017-07-15"
+                    ],
+                    [
+                        "android-4.4",
+                        "2017-07-15"
+                    ],
+                    [
+                        "Qualcomm mainline",
+                        "2017-08-08"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-10-04"
+                    ],
+                    [
+                        "samsungS8",
+                        "2017-09-25"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2016-11-19",
+        "CVEID": "CVE-2017-6425",
+        "phoneModels": [
+            {
+                "phoneModel": "samsungS8",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2016-12-19"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-01-10"
+                    ],
+                    [
+                        "samsungS8",
+                        "2017-08-16"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2017-04-03",
+        "CVEID": "CVE-2017-8247",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2017-05-03"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-05-22"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2017-11-02"
+                    ]
+                ]
+            },
+            {
+                "phoneModel": "samsungS8",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2017-05-03"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-05-22"
+                    ],
+                    [
+                        "samsungS8",
+                        "2017-08-16"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2017-02-05",
+        "CVEID": "CVE-2017-8246",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2017-03-07"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-03-15"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2017-06-08"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2017-01-28",
+        "CVEID": "CVE-2017-8242",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2017-02-27"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-03-15"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2017-06-08"
+                    ]
+                ]
+            },
+            {
+                "phoneModel": "samsungS8",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2017-02-27"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-03-15"
+                    ],
+                    [
+                        "samsungS8",
+                        "2017-08-16"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2016-10-15",
+        "CVEID": "CVE-2017-0607",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2016-11-14"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2016-11-16"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2018-01-18"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2017-01-08",
+        "CVEID": "CVE-2017-5970",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Linuxmainline",
+                        "2017-02-07"
+                    ],
+                    [
+                        "linux-4.4",
+                        "2017-02-18"
+                    ],
+                    [
+                        "android-4.4",
+                        "2017-03-02"
+                    ],
+                    [
+                        "Qualcomm mainline",
+                        "2017-03-25"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-07-31"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2017-06-29"
+                    ]
+                ]
+            },
+            {
+                "phoneModel": "samsungS8",
+                "patchdates": [
+                    [
+                        "Linuxmainline",
+                        "2017-02-07"
+                    ],
+                    [
+                        "linux-4.4",
+                        "2017-02-18"
+                    ],
+                    [
+                        "android-4.4",
+                        "2017-03-02"
+                    ],
+                    [
+                        "Qualcomm mainline",
+                        "2017-03-25"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-07-31"
+                    ],
+                    [
+                        "samsungS8",
+                        "2017-09-25"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2018-09-05",
+        "CVEID": "CVE-2018-13900",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2018-10-05"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "notpatched"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2019-03-21"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2017-12-10",
+        "CVEID": "CVE-2018-5344",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Linuxmainline",
+                        "2018-01-09"
+                    ],
+                    [
+                        "linux-4.4",
+                        "2018-02-03"
+                    ],
+                    [
+                        "android-4.4",
+                        "2018-02-03"
+                    ],
+                    [
+                        "Qualcomm mainline",
+                        "2018-02-08"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "notpatched"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2019-05-09"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2017-09-28",
+        "CVEID": "CVE-2017-16643",
+        "phoneModels": [
+            {
+                "phoneModel": "samsungS8",
+                "patchdates": [
+                    [
+                        "Linuxmainline",
+                        "2017-10-28"
+                    ],
+                    [
+                        "linux-4.4",
+                        "2017-11-02"
+                    ],
+                    [
+                        "android-4.4",
+                        "2017-11-02"
+                    ],
+                    [
+                        "Qualcomm mainline",
+                        "2017-12-14"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "notpatched"
+                    ],
+                    [
+                        "samsungS8",
+                        "2018-05-04"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2017-09-12",
+        "CVEID": "CVE-2017-16527",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Linuxmainline",
+                        "2017-10-12"
+                    ],
+                    [
+                        "linux-4.4",
+                        "2017-10-18"
+                    ],
+                    [
+                        "android-4.4",
+                        "2017-10-19"
+                    ],
+                    [
+                        "Qualcomm mainline",
+                        "2017-10-26"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2018-04-10"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2018-04-12"
+                    ]
+                ]
+            },
+            {
+                "phoneModel": "samsungS8",
+                "patchdates": [
+                    [
+                        "Linuxmainline",
+                        "2017-10-12"
+                    ],
+                    [
+                        "linux-4.4",
+                        "2017-10-18"
+                    ],
+                    [
+                        "android-4.4",
+                        "2017-10-19"
+                    ],
+                    [
+                        "Qualcomm mainline",
+                        "2017-10-26"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2018-04-10"
+                    ],
+                    [
+                        "samsungS8",
+                        "2018-04-11"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2017-06-12",
+        "CVEID": "CVE-2017-11044",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2017-07-12"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-07-31"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2018-01-18"
+                    ]
+                ]
+            },
+            {
+                "phoneModel": "samsungS8",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2017-07-12"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-07-31"
+                    ],
+                    [
+                        "samsungS8",
+                        "2017-09-25"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2017-02-04",
+        "CVEID": "CVE-2017-8258",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2017-03-06"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-03-15"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2018-01-18"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2017-02-12",
+        "CVEID": "CVE-2017-8259",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2017-03-14"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-03-28"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2017-06-08"
+                    ]
+                ]
+            },
+            {
+                "phoneModel": "samsungS8",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2017-03-14"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-03-28"
+                    ],
+                    [
+                        "samsungS8",
+                        "2017-09-25"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2016-04-24",
+        "CVEID": "CVE-2017-7495",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Linuxmainline",
+                        "2016-05-24"
+                    ],
+                    [
+                        "linux-4.4",
+                        "2017-11-21"
+                    ],
+                    [
+                        "android-4.4",
+                        "2017-06-21"
+                    ],
+                    [
+                        "Qualcomm mainline",
+                        "2017-07-03"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-12-01"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2018-01-18"
+                    ]
+                ]
+            },
+            {
+                "phoneModel": "samsungS8",
+                "patchdates": [
+                    [
+                        "Linuxmainline",
+                        "2016-05-24"
+                    ],
+                    [
+                        "linux-4.4",
+                        "2017-11-21"
+                    ],
+                    [
+                        "android-4.4",
+                        "2017-06-21"
+                    ],
+                    [
+                        "Qualcomm mainline",
+                        "2017-07-03"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-12-01"
+                    ],
+                    [
+                        "samsungS8",
+                        "2018-04-11"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2017-07-22",
+        "CVEID": "CVE-2017-15848",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2017-08-21"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-10-04"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2018-01-18"
+                    ]
+                ]
+            },
+            {
+                "phoneModel": "samsungS8",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2017-08-21"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-10-04"
+                    ],
+                    [
+                        "samsungS8",
+                        "2018-04-11"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2017-02-19",
+        "CVEID": "CVE-2017-8251",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2017-03-21"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-03-28"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2017-11-02"
+                    ]
+                ]
+            },
+            {
+                "phoneModel": "samsungS8",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2017-03-21"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-03-28"
+                    ],
+                    [
+                        "samsungS8",
+                        "2017-08-16"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2017-06-06",
+        "CVEID": "CVE-2017-15847",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2017-07-06"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-08-16"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2018-01-18"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2017-11-30",
+        "CVEID": "CVE-2018-5825",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2017-12-30"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2018-02-01"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2019-05-09"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2017-10-20",
+        "CVEID": "CVE-2017-15842",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2017-11-19"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-12-01"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2018-01-18"
+                    ]
+                ]
+            },
+            {
+                "phoneModel": "samsungS8",
+                "patchdates": [
+                    [
+                        "Qualcomm mainline",
+                        "2017-11-19"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "2017-12-01"
+                    ],
+                    [
+                        "samsungS8",
+                        "2018-04-11"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "startdate": "2018-06-08",
+        "CVEID": "CVE-2018-10883",
+        "phoneModels": [
+            {
+                "phoneModel": "xiaomi6",
+                "patchdates": [
+                    [
+                        "Linuxmainline",
+                        "2018-07-08"
+                    ],
+                    [
+                        "linux-4.4",
+                        "2018-11-21"
+                    ],
+                    [
+                        "android-4.4",
+                        "2018-11-21"
+                    ],
+                    [
+                        "Qualcomm mainline",
+                        "2018-12-04"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "notpatched"
+                    ],
+                    [
+                        "xiaomi6",
+                        "2019-03-21"
+                    ]
+                ]
+            },
+            {
+                "phoneModel": "samsungS8",
+                "patchdates": [
+                    [
+                        "Linuxmainline",
+                        "2018-07-08"
+                    ],
+                    [
+                        "linux-4.4",
+                        "2018-11-21"
+                    ],
+                    [
+                        "android-4.4",
+                        "2018-11-21"
+                    ],
+                    [
+                        "Qualcomm mainline",
+                        "2018-12-04"
+                    ],
+                    [
+                        "Qualcomm stable",
+                        "notpatched"
+                    ],
+                    [
+                        "samsungS8",
+                        "2019-03-22"
+                    ]
+                ]
+            }
+        ]
+    }
+]

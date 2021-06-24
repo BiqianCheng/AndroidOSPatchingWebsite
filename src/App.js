@@ -17,9 +17,7 @@ function App() {
         var phoneArray = {};
         cveData.map((item) => {
             cveArray[item.CVEID] = false;
-            item.phoneModels.map(
-                (value) => (phoneArray[value.phoneModel] = false)
-            );
+            item.phoneModels.map((value) => (phoneArray[value.phoneModel] = false));
         });
         setCVElist(cveArray);
         setPhoneList(phoneArray);
@@ -29,9 +27,7 @@ function App() {
         <div className="App">
             <header className="App-header"></header>
             {/* <Container maxWidth="xl"> */}
-            <div className="bigTitle">
-                Android OS Kernel Patch Propagation Graphic Visualization
-            </div>
+            <div className="bigTitle">Android OS Kernel Patch Propagation Graphic Visualization</div>
             <Grid container spacing={2} className="pagedTable">
                 <Grid item xs={3}>
                     <Typography variant="h6" component="h6">
@@ -45,24 +41,13 @@ function App() {
                     </Typography>
                 </Grid>
                 <Grid item xs={3}>
-                    <CVETable
-                        CVElist={CVElist}
-                        setCVElist={setCVElist}
-                        selectedPhone={getSelectedList(phoneList)}
-                    ></CVETable>
+                    <CVETable CVElist={CVElist} setCVElist={setCVElist} selectedPhone={getSelectedList(phoneList)}></CVETable>
                 </Grid>
                 <Grid item xs={6}>
-                    <PhoneTimeline
-                        selectedCVE={getSelectedList(CVElist)}
-                        selectedPhone={getSelectedList(phoneList)}
-                    />
+                    <PhoneTimeline selectedCVE={getSelectedList(CVElist)} selectedPhone={getSelectedList(phoneList)} />
                 </Grid>
                 <Grid item xs={3}>
-                    <PhoneTable
-                        phoneList={phoneList}
-                        setPhoneList={setPhoneList}
-                        selectedCVE={getSelectedList(CVElist)}
-                    ></PhoneTable>
+                    <PhoneTable phoneList={phoneList} setPhoneList={setPhoneList} selectedCVE={getSelectedList(CVElist)}></PhoneTable>
                 </Grid>
                 <Grid item xs={5}></Grid>
                 <Grid item xs={2}></Grid>
