@@ -15,7 +15,7 @@ class PhoneTimeline extends React.Component {
             minimumDate: "",
             maximumDate: "",
             eventData: [],
-            phoneList: [],
+            phoneList: config.data,
         };
     }
 
@@ -145,7 +145,7 @@ class PhoneTimeline extends React.Component {
             },
 
             // event data
-            eventData: data,
+            eventData: this.state.eventData,
 
             // enables/disables effects
             effects: {

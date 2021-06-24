@@ -49,7 +49,6 @@ const CVETable = forwardRef(({ CVElist, setCVElist, selectedPhone }) => {
     const [selectedCVE, setSelectedCVE] = useState(undefined);
     const [searchInput, setSearchInput] = useState();
     const [searchValue, setSearchValue] = useState();
-
     return (
         <Paper>
             <Container maxWidth="xl">
