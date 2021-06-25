@@ -114,6 +114,13 @@ function addMonths(date, months) {
     return date;
 }
 
+/**
+ * Return a format data point array according to the selected CVE and Phone Model
+ * @param {string} cveID The cve chosen by the user
+ * @param {string} selectedPhone The phone model chosen by the user
+ * @returns The format that required for the jquery timeline plugin
+ */
+
 function convertDataPoint(cveID, selectedPhone) {
     var firstFlag = true;
 
@@ -139,9 +146,23 @@ function convertDataPoint(cveID, selectedPhone) {
                 let result = {
                     eventId: String(resultData.CVEID.concat(dates[0])).hashCode(),
                     row: sideLists.indexOf(dates[0]) + 1,
-                    start: new Date(dates[1]),
+                    start: new Date(dates[1]).toDateString(),
                     type: "point",
                     content: resultData.CVEID,
+                    // height of row
+                    rowHeight: 50,
+
+                    // width of timeline
+                    width: "auto",
+
+                    // height of timeline
+                    height: "auto",
+
+                    // min size of <a href="https://www.jqueryscript.net/tags.php?/grid/">grid</a>
+                    minGridSize: 50,
+
+                    // margin size
+                    marginHeight: 2,
                 };
                 tempHashCode = String(resultData.CVEID.concat(dates[0])).hashCode();
                 firstFlag = false;
@@ -150,13 +171,27 @@ function convertDataPoint(cveID, selectedPhone) {
                 let result = {
                     eventId: String(resultData.CVEID.concat(dates[0])).hashCode(),
                     row: sideLists.indexOf(dates[0]) + 1,
-                    start: new Date(dates[1]),
+                    start: new Date(dates[1]).toDateString(),
                     type: "point",
                     relation: {
                         before: tempHashCode,
                         curve: true,
                     },
                     content: resultData.CVEID,
+                    // height of row
+                    rowHeight: 50,
+
+                    // width of timeline
+                    width: "auto",
+
+                    // height of timeline
+                    height: "auto",
+
+                    // min size of <a href="https://www.jqueryscript.net/tags.php?/grid/">grid</a>
+                    minGridSize: 50,
+
+                    // margin size
+                    marginHeight: 2,
                 };
                 tempHashCode = String(resultData.CVEID.concat(dates[0])).hashCode();
                 return result;
