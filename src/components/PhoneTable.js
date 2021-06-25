@@ -40,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const PhoneTable = ({ phoneList, setPhoneList, selectedCVE }) => {
+const PhoneTable = ({ phoneList, setPhoneList}) => {
     const classes = useStyles();
     const [page, setPage] = useState(1);
     const [selectedPhone, setSelectedPhone] = useState(undefined);

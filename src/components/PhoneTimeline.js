@@ -1,3 +1,4 @@
+import "./PhoneTimeline.css";
 import React from "react";
 import $ from "jquery";
 import "jq-timeline/dist/jquery.timeline.js";
@@ -10,8 +11,8 @@ class PhoneTimeline extends React.Component {
         super(props);
         this.state = {
             Loaded: false,
-            minimumDate: "",
-            maximumDate: "",
+            minimumDate: new Date(),
+            maximumDate: new Date(),
             eventData: [],
             phoneList: [],
         };
@@ -41,11 +42,12 @@ class PhoneTimeline extends React.Component {
     }
 
     displayTimeline(reloadFlag = false) {
-        console.log(this.props.selectedPhone)
+        console.log(this.props.selectedPhone);
         if (!this.props.selectedPhone.length) {
             return <div>SELECT YOUR PHONE</div>;
         }
         const { minDate, maxDate, sideLists, dataPoints } = convertDataPoint(this.props.selectedCVE, this.props.selectedPhone);
+        console.log(dataPoints);
         this.setState(
             {
                 minimumDate: minDate,
@@ -58,10 +60,10 @@ class PhoneTimeline extends React.Component {
                 if (reloadFlag) {
                     this.reload({
                         // start <a href="https://www.jqueryscript.net/time-clock/">date</a> time
-                        startDatetime: this.state.minimumDate,
+                        startDatetime: this.state.minimumDate.toDateString(),
 
                         // end date time
-                        endDatetime: this.state.maximumDate,
+                        endDatetime: this.state.maximumDate.toDateString(),
 
                         // displays sidebar
                         sidebar: {
@@ -72,7 +74,7 @@ class PhoneTimeline extends React.Component {
 
                         // event data
                         eventData: this.state.eventData,
-                        reloadCacheKeep: true,
+                        // reloadCacheKeep: true,
                     });
                 } else {
                     this.generateTimeline(this.state.minimumDate, this.state.maximumDate, this.state.phoneList, this.state.eventData);
@@ -115,7 +117,7 @@ class PhoneTimeline extends React.Component {
             // displays ruler
             ruler: {
                 top: {
-                    lines: ["year", "month"],
+                    lines: ["year", "day"],
                     height: 75,
                     fontSize: 14,
                     color: "#777777",
@@ -124,7 +126,6 @@ class PhoneTimeline extends React.Component {
                     format: {
                         hour12: false,
                         year: "long",
-                        month: "numeric",
                     },
                 },
             },
@@ -185,7 +186,7 @@ class PhoneTimeline extends React.Component {
             height: "auto",
 
             // min size of <a href="https://www.jqueryscript.net/tags.php?/grid/">grid</a>
-            minGridSize: 50,
+            minGridSize: 100,
 
             // margin size
             marginHeight: 2,
@@ -224,7 +225,7 @@ class PhoneTimeline extends React.Component {
             disableLimitter: false,
 
             // debug mode
-            debug: false,
+            debug: true,
         });
     }
 
@@ -284,10 +285,14 @@ class PhoneTimeline extends React.Component {
             "reload",
             { reloadCacheKeep: false },
             () => {
-                console.log(options);
-                this.$el.Timeline("reload", options, () => {
-                    console.log(arguments[1]);
-                });
+                this.$el.Timeline(
+                    "reload",
+                    options,
+                    () => {
+                        console.log(arguments);
+                    },
+                    userdata
+                );
             },
             userdata
         );
