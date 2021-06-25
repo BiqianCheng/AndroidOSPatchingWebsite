@@ -3,8 +3,8 @@ import CVETable from "./components/CVETable.js";
 import PhoneTable from "../src/components/PhoneTable.js";
 import PhoneTimeline from "../src/components/PhoneTimeline.js";
 import Grid from "@material-ui/core/Grid";
-import { Button, Typography } from "@material-ui/core";
-import { useEffect, useRef, useState } from "react";
+import { Typography } from "@material-ui/core";
+import { useEffect, useState } from "react";
 import cveData from "./json/data.json";
 import { getSelectedList } from "./utils/utils";
 
@@ -18,6 +18,7 @@ function App() {
         cveData.map((item) => {
             cveArray[item.CVEID] = false;
             item.phoneModels.map((value) => (phoneArray[value.phoneModel] = false));
+            return undefined;
         });
         setCVElist(cveArray);
         setPhoneList(phoneArray);

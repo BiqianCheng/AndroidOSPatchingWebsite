@@ -1,4 +1,4 @@
-import React, { forwardRef, useState } from "react";
+import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
@@ -43,7 +43,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const CVETable = forwardRef(({ CVElist, setCVElist, selectedPhone }) => {
+const CVETable = ({ CVElist, setCVElist, selectedPhone }) => {
     const classes = useStyles();
     const [page, setPage] = useState(1);
     const [selectedCVE, setSelectedCVE] = useState(undefined);
@@ -58,11 +58,7 @@ const CVETable = forwardRef(({ CVElist, setCVElist, selectedPhone }) => {
                             id="search-cve-autocomplete"
                             options={Object.keys(CVElist)}
                             getOptionDisabled={(option) =>
-                                selectedCVE
-                                    ? option !== selectedCVE
-                                    : cveData.filter((item) => {
-                                          item.phoneModels.some((e) => e.phoneModel === selectedPhone);
-                                      })
+                                selectedCVE ? option !== selectedCVE : !getPhoneModelByCVE(option).includes(selectedPhone[0])
                             }
                             style={{ width: 300 }}
                             value={searchValue}
@@ -107,7 +103,18 @@ const CVETable = forwardRef(({ CVElist, setCVElist, selectedPhone }) => {
                     </Grid>
                     <Grid item xs={12}>
                         {getSelectedList(CVElist).map((item) => (
-                            <Chip className={classes.chips} label={item} />
+                            <Chip
+                                className={classes.chips}
+                                key={item}
+                                label={item}
+                                onDelete={() => {
+                                    setCVElist({
+                                        ...CVElist,
+                                        [item]: false,
+                                    });
+                                    setSelectedCVE(undefined);
+                                }}
+                            />
                         ))}
                     </Grid>
                     <Grid item container spacing={2} xs={12}>
@@ -128,33 +135,35 @@ const CVETable = forwardRef(({ CVElist, setCVElist, selectedPhone }) => {
                                                     </React.Fragment>
                                                 }
                                             >
-                                                <ToggleButton
-                                                    value={item}
-                                                    disabled={
-                                                        selectedCVE ? item !== selectedCVE : !getPhoneModelByCVE(item).includes(selectedPhone[0])
-                                                    }
-                                                    selected={CVElist[item]}
-                                                    size="large"
-                                                    className={classes.button}
-                                                    onClick={() => {
-                                                        if (CVElist[item]) {
-                                                            setCVElist({
-                                                                ...CVElist,
-                                                                [item]: false,
-                                                            });
-                                                            setSelectedCVE(undefined);
-                                                        } else {
-                                                            setCVElist({
-                                                                ...CVElist,
-                                                                [item]: true,
-                                                            });
-                                                            setSelectedCVE(item);
+                                                <span>
+                                                    <ToggleButton
+                                                        value={item}
+                                                        disabled={
+                                                            selectedCVE ? item !== selectedCVE : !getPhoneModelByCVE(item).includes(selectedPhone[0])
                                                         }
-                                                        // console.log(CVElist);
-                                                    }}
-                                                >
-                                                    {item}
-                                                </ToggleButton>
+                                                        selected={CVElist[item]}
+                                                        size="large"
+                                                        className={classes.button}
+                                                        onClick={() => {
+                                                            if (CVElist[item]) {
+                                                                setCVElist({
+                                                                    ...CVElist,
+                                                                    [item]: false,
+                                                                });
+                                                                setSelectedCVE(undefined);
+                                                            } else {
+                                                                setCVElist({
+                                                                    ...CVElist,
+                                                                    [item]: true,
+                                                                });
+                                                                setSelectedCVE(item);
+                                                            }
+                                                            // console.log(CVElist);
+                                                        }}
+                                                    >
+                                                        {item}
+                                                    </ToggleButton>
+                                                </span>
                                             </Tooltip>
                                         </Grid>
                                     );
@@ -177,5 +186,5 @@ const CVETable = forwardRef(({ CVElist, setCVElist, selectedPhone }) => {
             </Container>
         </Paper>
     );
-});
+};
 export default CVETable;

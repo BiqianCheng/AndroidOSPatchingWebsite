@@ -21,12 +21,19 @@ String.prototype.hashCode = function () {
 
 /**
  *
- * @param {object} dataList The datalist contain a list of CVE or Phone Model with attribute of false.
- *                          Once user select a CVE or Phone Model, the attribute will be set as true.
- *
- *
- * @returns {array} Return the CVE or the Phone Model that is selected.
- *                  In other word, the specific CVE or Phone Model that has true attribute.
+ * @param {object} dataList
+ * The datalist contain a object that has CVE or Phone Model as key, and boolean as their associated value .
+ * If the user select the CVE or Phone Model, the associated value will be set as true.
+ * The incoming datatype should look something like this
+ * ```
+ * {...
+ *  CVE-xxxx-xxx1: false
+ *  CVE-xxxx-xxx2: true
+ * }
+ * ```
+ * @returns {array}
+ * Return the CVE or the Phone Model that is selected.
+ * In other word, the specific CVE or Phone Model that has true value.
  *
  */
 function getSelectedList(dataList) {
@@ -34,9 +41,9 @@ function getSelectedList(dataList) {
 }
 
 /**
- *
- * @param {string} cveID The CVEID specify the cve that the user want to find
- * @returns {array} Return the phone models that has already been patched this cve
+ * Return the Phone model which has been patched by the specified CVE
+ * @param {string} cveID The CVE specified by the user.
+ * @returns {array} Return the phone models that has already been patched with cveID
  */
 
 function getPhoneModelByCVE(cveID) {
@@ -47,7 +54,7 @@ function getPhoneModelByCVE(cveID) {
 
 /**
  *
- * @returns The whole dataset for the cve and phone model
+ * @returns The whole dataset that contains the cve and phone model
  */
 
 function getData() {
@@ -65,7 +72,7 @@ function getMinDate(patchdates) {
             null,
             patchdates
                 .map((patchdate) => {
-                    if (patchdate[1] === "notpatched" || patchdate[1] === "None") return;
+                    if (patchdate[1] === "notpatched" || patchdate[1] === "None") return undefined;
                     else return new Date(patchdate[1]);
                 })
                 .filter((item) => item !== undefined)
@@ -84,7 +91,7 @@ function getMaxDate(patchdates) {
             null,
             patchdates
                 .map((patchdate) => {
-                    if (patchdate[1] === "notpatched" || patchdate[1] === "None") return;
+                    if (patchdate[1] === "notpatched" || patchdate[1] === "None") return undefined;
                     else return new Date(patchdate[1]);
                 })
                 .filter((item) => item !== undefined)
@@ -125,11 +132,11 @@ function convertDataPoint(cveID, selectedPhone) {
     var dataPoints = selectedPhonePatchInfo.patchdates
         .map((dates) => {
             if (dates[1] === "notpatched" || dates[1] === "None") {
-                return;
+                return undefined;
             }
 
             if (firstFlag) {
-                var result = {
+                let result = {
                     eventId: String(resultData.CVEID.concat(dates[0])).hashCode(),
                     row: sideLists.indexOf(dates[0]) + 1,
                     start: new Date(dates[1]),
@@ -140,7 +147,7 @@ function convertDataPoint(cveID, selectedPhone) {
                 firstFlag = false;
                 return result;
             } else {
-                var result = {
+                let result = {
                     eventId: String(resultData.CVEID.concat(dates[0])).hashCode(),
                     row: sideLists.indexOf(dates[0]) + 1,
                     start: new Date(dates[1]),

@@ -1,12 +1,11 @@
-import React, { forwardRef, useState, useImperativeHandle, useContext } from "react";
+import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import Pagination from "@material-ui/lab/Pagination";
-import { Button, Chip, Container, TextField, Typography } from "@material-ui/core";
+import { Chip, Container, TextField, Typography } from "@material-ui/core";
 import { Autocomplete, ToggleButton } from "@material-ui/lab";
 import { getSelectedList } from "../utils/utils";
-import cveData from "../json/data.json";
 
 const useStyles = makeStyles((theme) => ({
     paper: {
@@ -41,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const PhoneTable = forwardRef(({ phoneList, setPhoneList, selectedCVE }) => {
+const PhoneTable = ({ phoneList, setPhoneList, selectedCVE }) => {
     const classes = useStyles();
     const [page, setPage] = useState(1);
     const [selectedPhone, setSelectedPhone] = useState(undefined);
@@ -98,7 +97,18 @@ const PhoneTable = forwardRef(({ phoneList, setPhoneList, selectedCVE }) => {
                     </Grid>
                     <Grid item xs={12}>
                         {getSelectedList(phoneList).map((item) => (
-                            <Chip className={classes.chips} label={item} />
+                            <Chip
+                                className={classes.chips}
+                                key={item}
+                                label={item}
+                                onDelete={() => {
+                                    setPhoneList({
+                                        ...phoneList,
+                                        [item]: false,
+                                    });
+                                    setSelectedPhone(undefined);
+                                }}
+                            />
                         ))}
                     </Grid>
                     <Grid item container spacing={2} xs={12}>
@@ -153,6 +163,6 @@ const PhoneTable = forwardRef(({ phoneList, setPhoneList, selectedCVE }) => {
             </Container>
         </Paper>
     );
-});
+};
 
 export default PhoneTable;

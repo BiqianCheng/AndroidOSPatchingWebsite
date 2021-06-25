@@ -4,8 +4,6 @@ import "jq-timeline/dist/jquery.timeline.js";
 import "jq-timeline/dist/jquery.timeline.min.css";
 import { Button } from "@material-ui/core";
 import { convertDataPoint } from "../utils/utils";
-import jsonData from "../json/data.json";
-import config from "../json/config.json";
 
 class PhoneTimeline extends React.Component {
     constructor(props) {
@@ -15,7 +13,7 @@ class PhoneTimeline extends React.Component {
             minimumDate: "",
             maximumDate: "",
             eventData: [],
-            phoneList: config.data,
+            phoneList: [],
         };
     }
 
@@ -43,6 +41,10 @@ class PhoneTimeline extends React.Component {
     }
 
     displayTimeline(reloadFlag = false) {
+        console.log(this.props.selectedPhone)
+        if (!this.props.selectedPhone.length) {
+            return <div>SELECT YOUR PHONE</div>;
+        }
         const { minDate, maxDate, sideLists, dataPoints } = convertDataPoint(this.props.selectedCVE, this.props.selectedPhone);
         this.setState(
             {
@@ -52,7 +54,7 @@ class PhoneTimeline extends React.Component {
                 eventData: dataPoints,
             },
             () => {
-                console.log(this.state.minimumDate, this.state.maximumDate, this.state.phoneList, this.state.eventData);
+                // console.log(this.state.minimumDate, this.state.maximumDate, this.state.phoneList, this.state.eventData);
                 if (reloadFlag) {
                     this.reload({
                         // start <a href="https://www.jqueryscript.net/time-clock/">date</a> time
@@ -70,11 +72,12 @@ class PhoneTimeline extends React.Component {
 
                         // event data
                         eventData: this.state.eventData,
-                        reloadCacheKeep: true
+                        reloadCacheKeep: true,
                     });
                 } else {
                     this.generateTimeline(this.state.minimumDate, this.state.maximumDate, this.state.phoneList, this.state.eventData);
                 }
+                this.setState({ Loaded: true });
             }
         );
     }
@@ -277,11 +280,17 @@ class PhoneTimeline extends React.Component {
     }
 
     reload(options, callback = null, userdata = null) {
-        this.$el.Timeline("reload", {reloadCacheKeep: false}, ()=>{
-            this.$el.Timeline("reload",options,()=>{
-                console.log(arguments)
-            })
-        }, userdata);
+        this.$el.Timeline(
+            "reload",
+            { reloadCacheKeep: false },
+            () => {
+                console.log(options);
+                this.$el.Timeline("reload", options, () => {
+                    console.log(arguments[1]);
+                });
+            },
+            userdata
+        );
     }
 
     removeEvent(condition, callback = null, userdata = null) {
@@ -308,20 +317,6 @@ class PhoneTimeline extends React.Component {
         return (
             <>
                 <div ref={(el) => (this.el = el)} />
-                {!this.state.Loaded ? (
-                    <Button
-                        variant="contained"
-                        onClick={() => {
-                            this.displayTimeline();
-
-                            this.setState({ Loaded: true });
-                        }}
-                    >
-                        Generate
-                    </Button>
-                ) : (
-                    <></>
-                )}
                 {this.state.Loaded ? (
                     <React.Fragment>
                         <Button
@@ -352,7 +347,14 @@ class PhoneTimeline extends React.Component {
                         </Button>
                     </React.Fragment>
                 ) : (
-                    <></>
+                    <Button
+                        variant="contained"
+                        onClick={() => {
+                            this.displayTimeline();
+                        }}
+                    >
+                        Generate
+                    </Button>
                 )}
             </>
         );
