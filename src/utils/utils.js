@@ -110,7 +110,7 @@ function addMonths(date, months) {
     if (date.getDate() !== d) {
         date.setDate(0);
     }
-    console.log(date);
+    // console.log(date);
     return date;
 }
 

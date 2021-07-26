@@ -98,7 +98,6 @@ const CVETable = ({ CVElist, setCVElist, selectedPhone }) => {
                     <Grid item xs={12}>
                         <Typography variant="body1" component="h6">
                             Selected CVEs:
-                            {console.log(selectedPhone)}
                         </Typography>
                     </Grid>
                     <Grid item xs={12}>

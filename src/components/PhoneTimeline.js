@@ -42,12 +42,12 @@ class PhoneTimeline extends React.Component {
     }
 
     displayTimeline(reloadFlag = false) {
-        console.log(this.props.selectedPhone);
+        // console.log(this.props.selectedPhone);
         if (!this.props.selectedPhone.length) {
             return <div>SELECT YOUR PHONE</div>;
         }
         const { minDate, maxDate, sideLists, dataPoints } = convertDataPoint(this.props.selectedCVE, this.props.selectedPhone);
-        console.log(dataPoints);
+        // console.log(dataPoints);
         this.setState(
             {
                 minimumDate: minDate,
@@ -225,7 +225,7 @@ class PhoneTimeline extends React.Component {
             disableLimitter: false,
 
             // debug mode
-            debug: true,
+            debug: false,
         });
     }
 
