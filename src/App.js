@@ -42,13 +42,13 @@ function App() {
                     </Typography>
                 </Grid>
                 <Grid item xs={3}>
-                    <CVETable CVElist={CVElist} setCVElist={setCVElist} selectedPhone={getSelectedList(phoneList)}></CVETable>
+                    <PhoneTable phoneList={phoneList} setPhoneList={setPhoneList} selectedCVE={getSelectedList(CVElist)}></PhoneTable>
                 </Grid>
                 <Grid item xs={6}>
                     <PhoneTimeline selectedCVE={getSelectedList(CVElist)} selectedPhone={getSelectedList(phoneList)} />
                 </Grid>
                 <Grid item xs={3}>
-                    <PhoneTable phoneList={phoneList} setPhoneList={setPhoneList} selectedCVE={getSelectedList(CVElist)}></PhoneTable>
+                    <CVETable CVElist={CVElist} setCVElist={setCVElist} selectedPhone={getSelectedList(phoneList)}></CVETable>
                 </Grid>
                 <Grid item xs={5}></Grid>
                 <Grid item xs={2}></Grid>
